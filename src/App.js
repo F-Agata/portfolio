@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import  styled, {ThemeProvider} from 'styled-components'
+
+import theme from "./styles/theme";
+import GlobalStyle from "./styles/GlobalStyle";
+
+import Navigation from "./components/navigation/Navigation";
+
+const AppWrapp = styled.div`
+  max-width: 1440px;
+  min-width: 375px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 200vh;
+  font-size: 18px;
+  font-family: 'arial', sans-serif;
+  color: hsl(233, 26%, 24%);`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle/>
+            <AppWrapp>
+                <Navigation/>
+            </AppWrapp>
+      </ThemeProvider>
   );
 }
 
