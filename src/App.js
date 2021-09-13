@@ -13,7 +13,8 @@ const AppWrapp = styled.div`
   min-height: 200vh;
   font-size: 18px;
   font-family: 'arial', sans-serif;
-  color: hsl(233, 26%, 24%);`
+  background-color:  ${props => props.theme.colors.colorGray};
+  border: 1px solid ${props => props.theme.colors.colorBorder};`
 
 function App() {
   return (
