@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useMediaQuery } from 'react-responsive'
@@ -22,28 +22,38 @@ const menuItems = [
     {name: "Strona 5",
      id: "menu5",}]
 
-const WrappNavigation = styled.aside`
+const WrappWrappNavigation = styled.aside`
+  height: 90px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color:  ${props => props.theme.colors.colorGray};
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  
+  box-shadow: none;
+  
+  ${({theme, addShadow})=>`
+    box-shadow: ${addShadow !== true && theme.shadows.shadowWhite};
+  `};
+  `
+const WrappNavigation = styled.div`
   height: 90px;
   align-self: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 1440px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
-  background-color:  ${props => props.theme.colors.colorGray};
-  box-shadow: ${props => props.theme.shadows.shadowWhite};
-  z-index: 10;
-
-  @media (min-width: 992px) {
-    max-width: 1440px;
+    @media (min-width: 992px) {
     padding: 0px 60px
   }`
 
 const WrappLogo = styled.div`
-  height: 25px;
-  margin-left: 20px;
+  height: 60px;
+  margin-left: 30px;
   text-align: left;
   border: 2px solid red;`
 
@@ -51,8 +61,8 @@ const Logo = styled.img`
   height: 100%;`
 
 const WrapIcon = styled.div`
-  height: 25px;
-  margin-right: 20px;
+  height: 30px;
+  margin-right: 30px;
   text-align: right;
   border: 2px solid red;`
 
@@ -63,6 +73,8 @@ const Navigation = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [iconMenu, setIconMenu] = useState(false);
+    const [scrollY, setScrollY] = useState(0)
+    const [addShadow, setAddShadow] = useState(false)
 
     const modificationMenuSize = useMediaQuery({query: '(min-width: 768px)' })
 
@@ -71,8 +83,25 @@ const Navigation = () => {
         setIconMenu (!iconMenu);
     };
 
+    const moveScroll = () => {
+        setScrollY(window.pageYOffset)
+        console.log(scrollY)
+        if (scrollY > 150) {
+            setAddShadow(true)
+        } else setAddShadow(false);
+        console.log(addShadow)
+    }
+
+    useEffect(() => {
+       window.addEventListener("scroll", moveScroll);
+       return () => window.removeEventListener("scroll", moveScroll);
+    }, [scrollY, addShadow])
+
+
     return (
-        <WrappNavigation>
+        <WrappWrappNavigation>
+         <WrappNavigation addShadow>
+                {addShadow ? 'Hello' : 'NoHello'}
             <WrappLogo>
                 <Logo src={logo} alt={"logo"}/>
             </WrappLogo>
@@ -85,6 +114,7 @@ const Navigation = () => {
             { modificationMenuSize &&
                 <NavigationListBig menuItems={menuItems}/>}
         </WrappNavigation>
+        </WrappWrappNavigation>
     )
 }
 

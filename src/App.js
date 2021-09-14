@@ -4,17 +4,18 @@ import theme from "./styles/theme";
 import GlobalStyle from "./styles/GlobalStyle";
 
 import Navigation from "./components/navigation/Navigation";
+import Header from "./components/header/Header";
 
 const AppWrapp = styled.div`
-  max-width: 1440px;
   min-width: 375px;
+  max-width: 1440px;
   margin: 0 auto;
   text-align: center;
   min-height: 200vh;
   font-size: 18px;
-  font-family: 'arial', sans-serif;
   background-color:  ${props => props.theme.colors.colorGray};
-  border: 1px solid ${props => props.theme.colors.colorBorder};`
+  font-family: 'Allison' ;
+  overflow: hidden;`
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <GlobalStyle/>
             <AppWrapp>
                 <Navigation/>
+                <Header/>
             </AppWrapp>
       </ThemeProvider>
   );

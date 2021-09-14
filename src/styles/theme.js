@@ -26,7 +26,8 @@ export default {
         gradientBox: 'linear-gradient(145deg, #e2e8ec, #ffffff)',
         gradientHover: 'linear-gradient(145deg, #ff014f, #d11414)',
     },
-
-
-
+    fonts: {
+        fontPrimary: `'Allison', 'sans-serif'`,
+        fontSecondary: `'Karla', 'sans-serif'`,
+    },
 }
