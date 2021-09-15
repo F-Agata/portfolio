@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useMediaQuery } from 'react-responsive'
 
 import NavigationListSmall from './NavigationListSmall'
@@ -8,7 +7,11 @@ import NavigationListBig from './NavigationListBig'
 
 import logo from '../../pictures/logo.svg';
 import navigationOpen from '../../pictures/icon-phone.svg'
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
+const iconFaBars = <FontAwesomeIcon icon={faBars} />
 
 const menuItems = [
     {name: "Strona 1",
@@ -62,6 +65,13 @@ const WrapIcon = styled.div`
 const Icon = styled.img`
   height: 100%;`
 
+const ToggleMenuButton = styled.button`
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: 32px;
+`
+
 const Navigation = () => {
 
     const [isOpen, setIsOpen] = useState(false);
@@ -104,7 +114,10 @@ const Navigation = () => {
             </WrappLogo>
             { modificationMenuSize ? null :
             <WrapIcon>
-                <Icon onClick={changeMenu} src={ navigationOpen} alt={"menu"}/>
+                {/*<Icon onClick={changeMenu} src={ navigationOpen} alt={"menu"}/>*/}
+                <ToggleMenuButton onClick={changeMenu}>
+                  {iconFaBars}
+                </ToggleMenuButton>
             </WrapIcon>}
             { isOpen && !modificationMenuSize ?
                 <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu}/> : null}
