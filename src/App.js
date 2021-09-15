@@ -13,7 +13,7 @@ const AppWrapp = styled.div`
   text-align: center;
   min-height: 200vh;
   font-size: 18px;
-  background-color:  ${props => props.theme.colors.colorGray};
+  background-color: transparent;
   font-family: 'Allison' ;
   overflow: hidden;`
 

@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
       }
   
       body {
-        background-color:  ${props => props.theme.colors.colorGray};
+        background: ${props => props.theme.gradients.gradientBox};
+        
       }
 `
 export default GlobalStyle

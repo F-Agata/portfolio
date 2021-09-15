@@ -28,7 +28,7 @@ const WrappWrappNavigation = styled.aside`
   position: fixed;
   top: 0px;
   left: 0px;
-  background-color:  ${props => props.theme.colors.colorGray};
+  background-color: transparent;
   display: flex;
   justify-content: center;
   z-index: 10;
@@ -76,7 +76,7 @@ const Navigation = () => {
     const [scrollY, setScrollY] = useState(0)
     const [addShadow, setAddShadow] = useState(false)
 
-    const modificationMenuSize = useMediaQuery({query: '(min-width: 768px)' })
+    const modificationMenuSize = useMediaQuery({query: '(min-width: 900px)' })
 
     const changeMenu = () => {
         setIsOpen (!isOpen);
