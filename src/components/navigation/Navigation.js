@@ -22,23 +22,16 @@ const menuItems = [
     {name: "Strona 5",
      id: "menu5",}]
 
-const WrappWrappNavigation = styled.aside`
+const NavigationBasicStyle = styled.aside`
   height: 90px;
   width: 100%;
   position: fixed;
-  top: 0px;
-  left: 0px;
-  background-color: transparent;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   z-index: 10;
-  
-  box-shadow: none;
-  
-  ${({theme, addShadow})=>`
-    box-shadow: ${addShadow !== true && theme.shadows.shadowWhite};
-  `};
-  `
+`
 const WrappNavigation = styled.div`
   height: 90px;
   align-self: center;
@@ -97,11 +90,15 @@ const Navigation = () => {
        return () => window.removeEventListener("scroll", moveScroll);
     }, [scrollY, addShadow])
 
-
+    const WrappNavigationShadow = styled(NavigationBasicStyle)`
+      ${({theme})=>`
+        background-color: ${addShadow ? 'white' : 'transparent'};
+        box-shadow: ${addShadow ? theme.shadows.shadowWhite : 'none'};
+      `};
+    `
     return (
-        <WrappWrappNavigation>
-         <WrappNavigation addShadow>
-                {addShadow ? 'Hello' : 'NoHello'}
+        <WrappNavigationShadow>
+         <WrappNavigation>
             <WrappLogo>
                 <Logo src={logo} alt={"logo"}/>
             </WrappLogo>
@@ -114,7 +111,7 @@ const Navigation = () => {
             { modificationMenuSize &&
                 <NavigationListBig menuItems={menuItems}/>}
         </WrappNavigation>
-        </WrappWrappNavigation>
+        </WrappNavigationShadow>
     )
 }
 
