@@ -76,7 +76,7 @@ const Navigation = () => {
     const [scrollY, setScrollY] = useState(0)
     const [addShadow, setAddShadow] = useState(false)
 
-    const modificationMenuSize = useMediaQuery({query: '(min-width: 900px)' })
+    const modificationMenuSize = useMediaQuery({query: '(min-width: 992px)' })
 
     const changeMenu = () => {
         setIsOpen (!isOpen);

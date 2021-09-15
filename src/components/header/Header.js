@@ -5,16 +5,24 @@ import headerPhoto from '../../pictures/banner-01.png'
 
 const WrappHeader = styled.header`
   margin: 150px 40px 0 40px;
+  padding-bottom: 40px;
   min-width: 375px;
   max-width: 1440px;
   border-bottom: 1px solid ${props => props.theme.colors.colorBorder};
   display: flex;
   flex-direction: column;
-  align-items: center;`
+  align-items: center;
+  @media (min-width: 992px) {
+    flex-direction: row-reverse;
+  }
+`
 
 const HeaderPartPhoto = styled.div`
-//border: crimson 2px solid;
-max-width: 900px;`
+border: crimson 2px solid;
+max-width: 900px;
+  @media (min-width: 992px) {
+    flex-basis: 45%;
+  }`
 
 const WrappBigPhoto = styled.div`
   max-width: 900px;
@@ -47,18 +55,15 @@ const ShadowDiv = styled.div`
   border-radius: 5px;
 `
 
-
-
 const HeaderPartText = styled.div`
   margin: 20px;
   border: crimson 2px solid;
-  background: ${props => props.theme.gradients.gradientBox};
-  box-shadow: ${props => props.theme.shadows.shadowWhite};
   max-width: 900px;
-  //background-color: #e2e8ec;
-width: 500px;
-height: 500px;
-  
+  width: 500px;
+  height: 500px;
+  @media (min-width: 992px) {
+    flex-basis: 55%;
+  }
 `
 
 const Header = () => {
