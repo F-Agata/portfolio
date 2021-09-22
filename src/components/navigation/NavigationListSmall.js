@@ -2,9 +2,11 @@ import React from "react";
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import navigationClose from '../../pictures/icon-location.svg'
-// import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import logo from "../../pictures/logo.svg";
+
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
+const iconFaXMark = <FontAwesomeIcon icon={faTimes} />
 
 
 const NavigationWrapp = styled.div`
@@ -17,7 +19,7 @@ const NavigationWrapp = styled.div`
   z-index: 999;`
 
 const NavigationListWrapp = styled.div`
-  background-color:  ${props => props.theme.colors.colorGray};
+  background: ${props => props.theme.gradients.gradientBox};
   position: absolute;
   top: 0;
   left: 0;
@@ -34,23 +36,37 @@ const TopMenu = styled.div`
   margin: 10px 0 30px 0;
   padding-bottom: 30px;
   display: flex;
-  justify-content: space-between`
+  justify-content: space-between;
+  align-items: center`
 
 const WrappLogo = styled.div`
-  height: 25px;
+  height: 60px;
   text-align: left;
-  border: 2px solid red;`
+  //border: 2px solid red;
+// `
 
 const Logo = styled.img`
   height: 100%;`
 
 const WrapIcon = styled.div`
-  height: 25px;
-  text-align: right;
-  border: 2px solid red;`
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  box-shadow: ${props => props.theme.shadows.shadowWhite};
+  background: ${props => props.theme.gradients.gradientBox};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  `
 
-const Icon = styled.img`
-  height: 100%;`
+const ToggleMenuButton = styled.button`
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: 24px;
+  color:  ${props => props.theme.colors.colorPrimary};
+  `
 
 const NavigationNav = styled.nav`
    //border: aquamarine 2px solid;
@@ -75,7 +91,8 @@ const NavigationLink = styled.a`
   text-decoration: none;
   height: 60px;
   color: black;
-  text-transform: uppercase`
+  text-transform: uppercase;
+  font-family: ${props => props.theme.fonts.fontSecondary};`
 
 const BottomMenu = styled.div`
   margin: 30px 0px 50px 0px;
@@ -98,7 +115,9 @@ const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
                      <Logo src={logo} alt={"logo"}/>
                  </WrappLogo>
                  <WrapIcon>
-                     <Icon onClick={changeMenu} src={ navigationClose} alt={"close"}/>
+                     <ToggleMenuButton onClick={changeMenu}>
+                         {iconFaXMark}
+                     </ToggleMenuButton>
                  </WrapIcon>
              </TopMenu>
              <NavigationNav>

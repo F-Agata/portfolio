@@ -14,7 +14,7 @@ const AppWrapp = styled.div`
   min-height: 200vh;
   font-size: 18px;
   background-color: transparent;
-  font-family: 'Allison' ;
+  font-family:  ${props => props.theme.fonts.fontPrimary} ;
   overflow: hidden;`
 
 function App() {

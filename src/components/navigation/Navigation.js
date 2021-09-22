@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useLockBodyScroll, useLayoutEffect } from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 
@@ -6,7 +6,6 @@ import NavigationListSmall from './NavigationListSmall'
 import NavigationListBig from './NavigationListBig'
 
 import logo from '../../pictures/logo.svg';
-import navigationOpen from '../../pictures/icon-phone.svg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -51,7 +50,7 @@ const WrappLogo = styled.div`
   height: 60px;
   margin-left: 30px;
   text-align: left;
-  border: 2px solid red;`
+  `
 
 const Logo = styled.img`
   height: 100%;`
@@ -60,16 +59,13 @@ const WrapIcon = styled.div`
   height: 30px;
   margin-right: 30px;
   text-align: right;
-  border: 2px solid red;`
-
-const Icon = styled.img`
-  height: 100%;`
-
+  `
 const ToggleMenuButton = styled.button`
   background: transparent;
   cursor: pointer;
   border: none;
   font-size: 32px;
+  color:  ${props => props.theme.colors.colorPrimary};
 `
 
 const Navigation = () => {
@@ -86,10 +82,15 @@ const Navigation = () => {
         setIconMenu (!iconMenu);
     };
 
+    const resetMenu = () => {
+        setIsOpen (false);
+        setIconMenu (false);
+    };
+
     const moveScroll = () => {
         setScrollY(window.pageYOffset)
         console.log(scrollY)
-        if (scrollY > 150) {
+        if (scrollY > 120) {
             setAddShadow(true)
         } else setAddShadow(false);
         console.log(addShadow)
@@ -98,11 +99,16 @@ const Navigation = () => {
     useEffect(() => {
        window.addEventListener("scroll", moveScroll);
        return () => window.removeEventListener("scroll", moveScroll);
-    }, [scrollY, addShadow])
+    }, [scrollY, addShadow]);
+
+    useEffect(() => {
+        resetMenu();
+        }, [modificationMenuSize])
+
 
     const WrappNavigationShadow = styled(NavigationBasicStyle)`
       ${({theme})=>`
-        background-color: ${addShadow ? 'white' : 'transparent'};
+        background: ${addShadow ? theme.colors.colorGray : 'transparent'};
         box-shadow: ${addShadow ? theme.shadows.shadowWhite : 'none'};
       `};
     `
@@ -114,7 +120,6 @@ const Navigation = () => {
             </WrappLogo>
             { modificationMenuSize ? null :
             <WrapIcon>
-                {/*<Icon onClick={changeMenu} src={ navigationOpen} alt={"menu"}/>*/}
                 <ToggleMenuButton onClick={changeMenu}>
                   {iconFaBars}
                 </ToggleMenuButton>
@@ -122,7 +127,7 @@ const Navigation = () => {
             { isOpen && !modificationMenuSize ?
                 <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu}/> : null}
             { modificationMenuSize &&
-                <NavigationListBig menuItems={menuItems}/>}
+                <NavigationListBig menuItems={menuItems} />}
         </WrappNavigation>
         </WrappNavigationShadow>
     )

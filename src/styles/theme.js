@@ -3,7 +3,7 @@ export default {
         colorPrimary: '#ff014f',
         colorSecondary: '#f4f5f6',
         colorTertiary: '#0d1013',
-        colorGray: '#f6f6f6',
+        colorGray: '#ECF0F3',
         colorBody: "#878e99",
         colorGraylighten: "#c4cfde",
         colorGrayMid: "#878787",
@@ -27,7 +27,7 @@ export default {
         gradientHover: 'linear-gradient(145deg, #ff014f, #d11414)',
     },
     fonts: {
-        fontPrimary: `'Allison', cursive;`,
-        fontSecondary: `'Karla', sans-serif;`,
+        fontPrimary: `'Poppins', sans-serif`,
+        fontSecondary: `'Montserrat', sans-serif`,
     },
 }
