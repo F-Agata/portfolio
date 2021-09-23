@@ -63,7 +63,7 @@ const ToggleMenuButton = styled.button`
   background: transparent;
   cursor: pointer;
   border: none;
-  font-size: 24px;
+  font-size: ${props => props.theme.fontSizes.fsB2};
   color:  ${props => props.theme.colors.colorPrimary};
   `
 
@@ -97,9 +97,10 @@ const NavigationLink = styled.a`
   transition: 0.3s;`
 
 const BottomMenu = styled.div`
-  margin: 30px 0px 150px 0px;
+  margin: 30px 0px 40px 0px;
   text-align: left;
-  border: yellow 2px solid;
+  
+  //border: yellow 2px solid;
 `
 
 const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
@@ -129,7 +130,7 @@ const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
                 </NavigationUl>
              </NavigationNav>
              <BottomMenu>
-               <SocialButtons/>
+               <SocialButtons colorPrimary/>
              </BottomMenu>
             </NavigationListWrapp>
         </NavigationWrapp>

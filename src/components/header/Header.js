@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 
 import headerPhoto from '../../pictures/banner-01.png'
+import SocialButtons from "../SocialButtons";
 
 const WrappHeader = styled.header`
   margin: 100px 40px 0 40px;
@@ -81,8 +82,9 @@ const Header = () => {
             </HeaderPartPhoto>
 
             <HeaderPartText>
-
                 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, beatae, delectus distinctio ducimus eligendi enim explicabo ipsam odio quidem sapiente soluta suscipit tenetur, veritatis. Cum eos facere placeat rerum ullam!</p>
+           <SocialButtons/>
+
             </HeaderPartText>
         </WrappHeader>
     )
