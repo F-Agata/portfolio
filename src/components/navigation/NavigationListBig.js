@@ -2,7 +2,6 @@ import React from "react";
 import styled from 'styled-components'
 
 const NavigationWrapp = styled.div`
-  flex-grow: 1;
   align-self: center;
   margin-right: 30px;
   //border: 2px solid purple;
@@ -12,7 +11,10 @@ const NavigationUl = styled.ul`
   display: flex;
   height: 60px;
   justify-content: right;
-//border: 2px saddlebrown solid
+  //border: 2px saddlebrown solid;
+  transition: 0.3s;
+  :hover a {
+    color:  ${props => props.theme.colors.colorGrayMid};
 `
 
 const NavigationLi = styled.li`
@@ -21,19 +23,22 @@ const NavigationLi = styled.li`
   cursor: pointer;
   line-height: 60px;
   text-align: right;
-  :hover {
-    color: #61dafb;
+  transition: 0.3s;
+  :hover a {
+    color:  ${props => props.theme.colors.colorText};
   }`
 
 const NavigationLink = styled.a`
   text-decoration: none;
   height: 60px;
-  color: black;
+  color: ${props => props.theme.colors.colorText};
   text-transform: uppercase;
   font-family: ${props => props.theme.fonts.fontSecondary};
-  :hover {
-    color: black;
-  }`
+  font-size: ${props => props.theme.fontSizes.fsB1};
+  transition: 0.3s;
+  :active {
+    color:  ${props => props.theme.colors.colorPrimary}}
+`
 
 const NavigationMainListBig = ({ menuItems }) => {
 

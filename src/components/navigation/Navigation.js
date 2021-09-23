@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useLockBodyScroll, useLayoutEffect } from 'react'
+import React, {useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 
@@ -103,8 +103,7 @@ const Navigation = () => {
 
     useEffect(() => {
         resetMenu();
-        }, [modificationMenuSize])
-
+        }, [modificationMenuSize]);
 
     const WrappNavigationShadow = styled(NavigationBasicStyle)`
       ${({theme})=>`
@@ -125,7 +124,7 @@ const Navigation = () => {
                 </ToggleMenuButton>
             </WrapIcon>}
             { isOpen && !modificationMenuSize ?
-                <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu}/> : null}
+                <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} /> : null}
             { modificationMenuSize &&
                 <NavigationListBig menuItems={menuItems} />}
         </WrappNavigation>

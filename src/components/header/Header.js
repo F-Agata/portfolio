@@ -81,6 +81,7 @@ const Header = () => {
             </HeaderPartPhoto>
 
             <HeaderPartText>
+
                 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, beatae, delectus distinctio ducimus eligendi enim explicabo ipsam odio quidem sapiente soluta suscipit tenetur, veritatis. Cum eos facere placeat rerum ullam!</p>
             </HeaderPartText>
         </WrappHeader>

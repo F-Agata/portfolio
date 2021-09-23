@@ -2,12 +2,13 @@ import React from "react";
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import SocialButtons from "../SocialButtons";
+
 import logo from "../../pictures/logo.svg";
 
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const iconFaXMark = <FontAwesomeIcon icon={faTimes} />
-
 
 const NavigationWrapp = styled.div`
   position: fixed;
@@ -41,9 +42,8 @@ const TopMenu = styled.div`
 
 const WrappLogo = styled.div`
   height: 60px;
-  text-align: left;
-  //border: 2px solid red;
-// `
+  text-align: left; 
+`
 
 const Logo = styled.img`
   height: 100%;`
@@ -57,8 +57,7 @@ const WrapIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  `
+    `
 
 const ToggleMenuButton = styled.button`
   background: transparent;
@@ -76,28 +75,32 @@ const NavigationNav = styled.nav`
 const NavigationUl = styled.ul`
   display: flex;
   flex-direction: column;
-  height: 60px;
+  height: 60px;`
   //border: red 2px solid`
 
 const NavigationLi = styled.li`
   list-style: none;
   cursor: pointer;
   line-height: 60px;
+  transition: 0.3s;
   :hover a {
-    color: red;
+    color:  ${props => props.theme.colors.colorPrimary};
   }`
 
 const NavigationLink = styled.a`
   text-decoration: none;
   height: 60px;
-  color: black;
+  color: ${props => props.theme.colors.colorText};
   text-transform: uppercase;
-  font-family: ${props => props.theme.fonts.fontSecondary};`
+  font-family: ${props => props.theme.fonts.fontSecondary};
+  font-size: ${props => props.theme.fontSizes.fsB3};
+  transition: 0.3s;`
 
 const BottomMenu = styled.div`
-  margin: 30px 0px 50px 0px;
+  margin: 30px 0px 150px 0px;
   text-align: left;
-  //border: yellow 2px solid;`
+  border: yellow 2px solid;
+`
 
 const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
 
@@ -107,7 +110,7 @@ const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
         </NavigationLi>
     ));
 
-    return (
+     return (
         <NavigationWrapp>
             <NavigationListWrapp>
              <TopMenu>
@@ -126,7 +129,7 @@ const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
                 </NavigationUl>
              </NavigationNav>
              <BottomMenu>
-                 kontakt
+               <SocialButtons/>
              </BottomMenu>
             </NavigationListWrapp>
         </NavigationWrapp>

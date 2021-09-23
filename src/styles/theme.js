@@ -3,6 +3,7 @@ export default {
         colorPrimary: '#ff014f',
         colorSecondary: '#f4f5f6',
         colorTertiary: '#0d1013',
+        colorText: '#3c3e41',
         colorGray: '#ECF0F3',
         colorBody: "#878e99",
         colorGraylighten: "#c4cfde",
@@ -30,4 +31,9 @@ export default {
         fontPrimary: `'Poppins', sans-serif`,
         fontSecondary: `'Montserrat', sans-serif`,
     },
-}
+    fontSizes: {
+        fsB1: '18px',
+        fsB2: '22px',
+        fsB3: '14px',
+           },
+  }
