@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
   
       body {
         background: ${props => props.theme.gradients.gradientBox};
-        
       }
 `
 export default GlobalStyle

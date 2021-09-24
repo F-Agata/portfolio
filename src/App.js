@@ -10,11 +10,13 @@ const AppWrapp = styled.div`
   min-width: 375px;
   max-width: 1440px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   min-height: 200vh;
-  font-size: 18px;
+  font-size: 16px;
   background-color: transparent;
   font-family:  ${props => props.theme.fonts.fontPrimary} ;
+  line-height: 30px;
+  color: ${props => props.theme.colors.colorText};
   overflow: hidden;`
 
 function App() {

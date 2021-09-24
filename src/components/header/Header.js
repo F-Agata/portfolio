@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import headerPhoto from '../../pictures/banner-01.png'
-import SocialButtons from "../SocialButtons";
+import HeaderPartPhoto from "./HeaderPartPhoto";
+import HeaderPartText from "./HeaderPartText";
 
 const WrappHeader = styled.header`
   margin: 100px 40px 0 40px;
@@ -13,58 +13,29 @@ const WrappHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: green solid 2px;
   @media (min-width: 992px) {
     flex-direction: row-reverse;
-    margin: 150px 40px 0 40px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 40px 0 40px;
+    padding-top: 40px;
   }
 `
 
-const HeaderPartPhoto = styled.div`
+const WrappHeaderPartPhoto = styled.div`
 max-width: 900px;
+  border: rebeccapurple solid 2px;
   @media (min-width: 992px) {
-    flex-basis: 45%;
+    flex-basis: 40%;
   }`
 
-const WrappBigPhoto = styled.div`
-  max-width: 900px;
-  position: relative;
-  `
-
-const WrappSmallPhoto = styled.div`
-  max-width: 900px;
-  line-height: 0;
-  position: relative;
-  top: 0;
-  bottom: 0px;
-  left: 0px;
-  right: 0;
-  z-index: 1;
-`
-const PhotoMy = styled.img`
-  width: 100%;
-  `
-
-const ShadowDiv = styled.div`
-  max-width: 900px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 20%;
-  z-index: 0;
-  box-shadow: ${props => props.theme.shadows.shadowWhite};
-  background: ${props => props.theme.gradients.gradientBox};
-  border-radius: 5px;
-  `
-
-const HeaderPartText = styled.div`
-  margin: 20px;
+const WrappHeaderPartText = styled.div`
   border: crimson 2px solid;
-  max-width: 900px;
-  width: 500px;
-  height: 500px;
+  max-width: 700px;
   @media (min-width: 992px) {
-    flex-basis: 55%;
+    flex-basis: 50%;
+    max-width: 900px;
   }
 `
 
@@ -72,20 +43,12 @@ const Header = () => {
 
     return (
         <WrappHeader>
-            <HeaderPartPhoto>
-             <WrappBigPhoto>
-                 <ShadowDiv/>
-                 <WrappSmallPhoto>
-                     <PhotoMy src={headerPhoto} alt={"I'm"}/>
-                 </WrappSmallPhoto>
-             </WrappBigPhoto>
-            </HeaderPartPhoto>
-
-            <HeaderPartText>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, beatae, delectus distinctio ducimus eligendi enim explicabo ipsam odio quidem sapiente soluta suscipit tenetur, veritatis. Cum eos facere placeat rerum ullam!</p>
-           <SocialButtons/>
-
-            </HeaderPartText>
+            <WrappHeaderPartPhoto>
+                  <HeaderPartPhoto/>
+            </WrappHeaderPartPhoto>
+            <WrappHeaderPartText>
+                  <HeaderPartText/>
+            </WrappHeaderPartText>
         </WrappHeader>
     )
 }
