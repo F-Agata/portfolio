@@ -94,6 +94,8 @@ const NavigationLink = styled.a`
   text-transform: uppercase;
   font-family: ${props => props.theme.fonts.fontSecondary};
   font-size: ${props => props.theme.fontSizes.fsB3};
+  font-weight: 700;
+  letter-spacing: 2px;
   transition: 0.3s;`
 
 const BottomMenu = styled.div`

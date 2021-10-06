@@ -26,7 +26,7 @@ const InformationAboutMe = styled.p`
 width: 100%;
   margin: 30px 0;
   @media (min-width: 992px) {
-    border: #61dafb 2px solid;
+    //border: #61dafb 2px solid;
      }
 `
 
@@ -36,7 +36,7 @@ display: flex;
 justify-content: left;
 margin-top: 30px;
   @media (min-width: 992px) {
-    border: #61dafb 2px solid;
+    //border: #61dafb 2px solid;
   }`
 
 

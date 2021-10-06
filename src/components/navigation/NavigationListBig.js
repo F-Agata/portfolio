@@ -35,6 +35,8 @@ const NavigationLink = styled.a`
   text-transform: uppercase;
   font-family: ${props => props.theme.fonts.fontSecondary};
   font-size: ${props => props.theme.fontSizes.fsB1};
+  font-weight: bold;
+  letter-spacing: 2px;
   transition: 0.3s;
   :active {
     color:  ${props => props.theme.colors.colorPrimary}}

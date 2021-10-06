@@ -13,7 +13,7 @@ const WrappHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: green solid 2px;
+  //border: green solid 2px;
   @media (min-width: 992px) {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -25,13 +25,13 @@ const WrappHeader = styled.header`
 
 const WrappHeaderPartPhoto = styled.div`
 max-width: 900px;
-  border: rebeccapurple solid 2px;
+  //border: rebeccapurple solid 2px;
   @media (min-width: 992px) {
     flex-basis: 40%;
   }`
 
 const WrappHeaderPartText = styled.div`
-  border: crimson 2px solid;
+  //border: crimson 2px solid;
   max-width: 700px;
   @media (min-width: 992px) {
     flex-basis: 50%;

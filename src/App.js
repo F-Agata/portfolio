@@ -3,8 +3,12 @@ import  styled, {ThemeProvider} from 'styled-components'
 import theme from "./styles/theme";
 import GlobalStyle from "./styles/GlobalStyle";
 
-import Navigation from "./components/navigation/Navigation";
+import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
+import MainPage from "./components/mainPage/MainPage";
+import Navigation from "./components/navigation/Navigation";
+
+
 
 const AppWrapp = styled.div`
   min-width: 375px;
@@ -26,6 +30,8 @@ function App() {
             <AppWrapp>
                 <Navigation/>
                 <Header/>
+                <MainPage/>
+                <Footer/>
             </AppWrapp>
       </ThemeProvider>
   );
