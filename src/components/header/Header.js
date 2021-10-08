@@ -44,10 +44,10 @@ const Header = () => {
     return (
         <WrappHeader>
             <WrappHeaderPartPhoto>
-                  <HeaderPartPhoto/>
+                <HeaderPartPhoto/>
             </WrappHeaderPartPhoto>
             <WrappHeaderPartText>
-                  <HeaderPartText/>
+                <HeaderPartText/>
             </WrappHeaderPartText>
         </WrappHeader>
     )
