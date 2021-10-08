@@ -19,6 +19,7 @@ const socialIconsArray = [
    ]
 
 const WrappSocialButtons = styled.div`
+  //border: red 2px solid;
     display: flex;
   flex-wrap: wrap;
   flex-direction: column;

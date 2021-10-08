@@ -15,8 +15,7 @@ const WrappMainPage = styled.main`
   align-items: center;
   //border: limegreen solid 2px;
   @media (min-width: 992px) {
-    
-  }`
+     }`
 
 
 const MainPage = () => {

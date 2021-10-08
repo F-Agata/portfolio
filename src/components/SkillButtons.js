@@ -22,8 +22,13 @@ const WrappSkillButtons = styled.div`
     display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  //border: red 2px solid;
   width: 200px;
-  margin-left: 100px;
+  margin-top: 40px;
+  @media (min-width: 550px) {
+    margin-left: 100px;
+     margin-top: 0px;
+  }
 `
 const Invitation = styled.p`
   width: 100%;

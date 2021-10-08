@@ -31,12 +31,16 @@ width: 100%;
 `
 
 const WrappSocialAndSkillButtons = styled.div`
+  //border: #61dafb 2px solid;
 width: 100%;
-display: flex;
-justify-content: left;
+ display: flex;
+flex-direction: column;
+align-items: flex-start;  
+justify-content: space-between;
 margin-top: 30px;
-  @media (min-width: 992px) {
+  @media (min-width: 550px) {
     //border: #61dafb 2px solid;
+    flex-direction: row;
   }`
 
 

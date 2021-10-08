@@ -13,7 +13,7 @@ const WrappHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  //border: green solid 2px;
+   //border: green solid 2px;
   @media (min-width: 992px) {
     flex-direction: row-reverse;
     justify-content: space-between;

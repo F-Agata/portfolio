@@ -10,7 +10,7 @@ const WrappFooter = styled.footer`
   padding: 40px ;
   min-width: 375px;
   max-width: 1440px;
-  border: green solid 2px;
+  //border: green solid 2px;
   display: flex;
   flex-direction: column;
   align-items: center;
