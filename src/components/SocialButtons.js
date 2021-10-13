@@ -20,9 +20,10 @@ const socialIconsArray = [
 
 const WrappSocialButtons = styled.div`
   //border: red 2px solid;
-    display: flex;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
   width: 200px;
 `
 const Invitation = styled.p`
@@ -31,6 +32,7 @@ const Invitation = styled.p`
   font-size: ${props => props.theme.fontSizes.fsB3};
   font-family: ${props => props.theme.fonts.fontPrimary};
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 2px;
   margin-bottom: 20px;
   font-weight: 700;
