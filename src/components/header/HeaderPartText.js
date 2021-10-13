@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import SkillButtons from "../SkillButtons";
 import SocialButtons from "../SocialButtons";
+import TypeIt from 'typeit-react'
 
 const WrappHeaderInformations = styled.div`
 width: 100%;
@@ -14,12 +15,12 @@ margin: 50px 0 30px 0;
     margin: 0;
   }`
 
-const Welcome = styled.h1`
+const Welcome = styled.div`
   width: 100%;
   font-family: ${props => props.theme.fonts.fontSecondary};
   font-size: ${props => props.theme.fontSizes.fsB1};  
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
  `
 
 const InformationAboutMe = styled.p`
@@ -43,12 +44,36 @@ margin-top: 30px;
     flex-direction: row;
   }`
 
+const TypeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+`
 
 const HeaderPartText = () => {
 
     return (
         <WrappHeaderInformations>
-            <Welcome>Witaj na mojej stronie</Welcome>
+            <Welcome>
+              <TypeWrapper>
+                <TypeIt
+                  getBeforeInit={(instance) => {
+                    instance
+                        .type('Cześć,')
+                        .pause(300)
+                        .type(' jestem <span style="color: #ff014f; font-size: 30px; font-weight: 700; letter-spacing: 2px">Agata</span> ')
+                        .break()
+                        .type('Moim')
+                        .pause(300).delete(3)
+                        .type('ój cel zawodowy,')
+                        .break()
+                        .type('to rozwój w kierunku <span style="color: #ff014f; font-size: 28px; letter-spacing: 2px">Front-end developer </span>');
+                    return instance;
+                  }}
+                />
+              </TypeWrapper>
+            </Welcome>
             <InformationAboutMe>Tutaj napiszę kilka słów o mnie. W tym momencie powstaje struktura strony. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem ducimus earum eligendi facilis incidunt laudantium magni minus nostrum, omnis qui, suscipit, ullam veniam. Aut dolore eligendi eos ex necessitatibus!</InformationAboutMe>
             <WrappSocialAndSkillButtons>
                 <SocialButtons/>

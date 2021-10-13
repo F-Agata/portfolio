@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import MainPage from "./components/mainPage/MainPage";
 import Navigation from "./components/navigation/Navigation";
+import GoToTopOfPage from "./components/GoToTopOfPage";
 
 
 
@@ -32,6 +33,7 @@ function App() {
                 <Header/>
                 <MainPage/>
                 <Footer/>
+                <GoToTopOfPage/>
             </AppWrapp>
       </ThemeProvider>
   );

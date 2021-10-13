@@ -89,11 +89,10 @@ const Navigation = () => {
 
     const moveScroll = () => {
         setScrollY(window.pageYOffset)
-        console.log(scrollY)
         if (scrollY > 120) {
             setAddShadow(true)
         } else setAddShadow(false);
-        console.log(addShadow)
+
     }
 
     useEffect(() => {
