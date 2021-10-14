@@ -66,9 +66,9 @@ const HeaderPartText = () => {
                         .break()
                         .type('Moim')
                         .pause(300).delete(3)
-                        .type('ój cel zawodowy,')
+                        .type('ój cel zawodowy, to dalszy rozwój')
                         .break()
-                        .type('to rozwój w kierunku <span style="color: #ff014f; font-size: 28px; letter-spacing: 2px">Front-end developer </span>');
+                        .type('jako <span style="color: #ff014f; font-size: 28px; letter-spacing: 2px">Front-end developer </span>');
                     return instance;
                   }}
                 />
