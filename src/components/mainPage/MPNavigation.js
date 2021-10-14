@@ -1,23 +1,11 @@
 import React from "react";
 import styled from 'styled-components'
 
-const mpNavigationArray = [
-    {name: 'zakładka 1',
-        id: "MPNavigation1",
-        },
-    {name: 'zakładka 2',
-        id: "MPNavigation2",
-        },
-    {name: 'zakładka 3',
-        id: "MPNavigation3",},
-]
-
-
 const WrappMPNavigation = styled.div`
   width: 100%;
   margin: 0;
   min-width: 375px;
-  max-width: 1440px;
+  max-width: 1440px; 
   //border: green solid 2px;
   border-radius: 10px;
   box-shadow: ${props => props.theme.shadows.shadowWhite};
@@ -75,7 +63,7 @@ const NavigationLink = styled.a`
   :active {
     color:  ${props => props.theme.colors.colorPrimary}}`
 
-const MPNavigation = () => {
+const MPNavigation = ({mpNavigationArray}) => {
 
     const npNavigationItem = mpNavigationArray.map( (item) => (
         <NavigationLi key={item.id}>
