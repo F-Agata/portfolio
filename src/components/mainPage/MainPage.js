@@ -39,7 +39,7 @@ const MainPage = () => {
 
     return (
         <WrappMainPage>
-            <MPNavigation setActiveTab={setActiveTab} mpNavigationArray={mpNavigationArray}/>
+            <MPNavigation setActiveTab={setActiveTab} mpNavigationArray={mpNavigationArray} activeTab={activeTab}/>
             {activeTab === 'edukacja' && <MPEducation />}
             {activeTab === 'doświadczenie zawodowe' && <MPExperience />}
             {activeTab === 'umiejętności' && <MPSkills />}
