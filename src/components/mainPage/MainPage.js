@@ -9,15 +9,12 @@ import MPSkills from "./MPSkills";
 const mpNavigationArray = [
     {name: 'edukacja',
         id: "MPNavigation1",
-        active: 'false',
     },
     {name: 'doświadczenie zawodowe',
         id: "MPNavigation2",
-        active: 'false',
     },
     {name: 'umiejętności',
         id: "MPNavigation3",
-        active: 'false',
     },
 ]
 
