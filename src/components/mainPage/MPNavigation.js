@@ -50,7 +50,7 @@ const NavigationLi = styled.li`
     color:  ${props => props.theme.colors.colorPrimary};
   }`
 
-const NavigationLink = styled.a`
+const NavigationText = styled.div`
   text-decoration: none;
   height: 60px;
   color: ${props => props.theme.colors.colorText};
@@ -63,11 +63,11 @@ const NavigationLink = styled.a`
   :active {
     color:  ${props => props.theme.colors.colorPrimary}}`
 
-const MPNavigation = ({mpNavigationArray, searchId}) => {
+const MPNavigation = ({mpNavigationArray, setActiveTab}) => {
 
-    const mpNavigationItem = mpNavigationArray.map( (item) => (
-        <NavigationLi key={item.id} onClick={() => searchId (item.id)}>
-            <NavigationLink href={"#"}>{item.name}</NavigationLink>
+    const mpNavigationItem = mpNavigationArray.map( ({ id, name }) => (
+        <NavigationLi key={id} onClick={() => setActiveTab(name)}>
+            <NavigationText>{name}</NavigationText>
         </NavigationLi>
     ));
 

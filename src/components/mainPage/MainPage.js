@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import MPEducation from "./MPEducation";
@@ -34,29 +34,17 @@ const WrappMainPage = styled.main`
   @media (min-width: 992px) {
      }`
 
-
 const MainPage = () => {
-
-    const [whichIndex, setWhichIndex] = useState(0);
-
-     const searchId = (id) => {
-        const indexItem = mpNavigationArray.findIndex(task => task.id == id)
-        setWhichIndex(indexItem)
-    };
-
+    const [activeTab, setActiveTab] = useState('edukacja');
 
     return (
         <WrappMainPage>
-            <MPNavigation mpNavigationArray={mpNavigationArray} searchId={searchId}/>
-            { whichIndex == 0 ?
-                <MPEducation/> : null}
-            { whichIndex == 1 ?
-                <MPExperience/> : null}
-            { whichIndex == 2 ?
-                <MPSkills/> : null}
-
+            <MPNavigation setActiveTab={setActiveTab} mpNavigationArray={mpNavigationArray}/>
+            {activeTab === 'edukacja' && <MPEducation />}
+            {activeTab === 'doświadczenie zawodowe' && <MPExperience />}
+            {activeTab === 'umiejętności' && <MPSkills />}
         </WrappMainPage>
     )
-}
+};
 
 export default MainPage
