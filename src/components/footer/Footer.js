@@ -20,6 +20,7 @@ const WrappFooter = styled.footer`
   // background: ${props => props.theme.gradients.gradientBox};
   @media (min-width: 992px) {
     flex-direction: row;
+    align-items: flex-start;
   }`
 
 const WrappLogo = styled.div`
@@ -27,6 +28,9 @@ const WrappLogo = styled.div`
   margin-bottom: 30px;
   @media (min-width: 992px) {
     margin-bottom: 0px;
+  }
+  img {
+    height: 28px;
   }
   `
 
@@ -36,6 +40,7 @@ const Logo = styled.img`
 
 const WrappContact = styled.div`
   margin-top: 30px;
+  text-align: right;
   @media (min-width: 992px) {
     margin-top: 0px;
   }
@@ -56,8 +61,8 @@ const Footer = () => {
             </WrappLogo>
             <SocialButtons/>
             <WrappContact>
-                <ContactPhone>666 666 666</ContactPhone>
-                <ContactMail>hello@wp.pl</ContactMail>
+                <ContactPhone>609 594 597</ContactPhone>
+                <ContactMail>hello@agataf.pl</ContactMail>
             </WrappContact>
         </WrappFooter>
     )

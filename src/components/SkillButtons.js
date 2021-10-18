@@ -2,20 +2,18 @@ import React from "react";
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faReact, faSass } from '@fortawesome/free-brands-svg-icons';
 
-const iconFaXMark = <FontAwesomeIcon icon={faTimes} />
+const iconReact = <FontAwesomeIcon icon={faReact} />
+const iconSass = <FontAwesomeIcon icon={faSass} />
 
 const skillIconsArray = [
-    {name: iconFaXMark,
-        id: "iconFaXMark11",
-        path: 'https://www.geeksforgeeks.org/how-to-create-an-html-button-that-acts-like-a-link/',},
-    {name: iconFaXMark,
-        id: "iconFaXMark22",
-        path: 'https://www.geeksforgeeks.org/how-to-create-an-html-button-that-acts-like-a-link/',},
-    {name: iconFaXMark,
-        id: "iconFaXMark33",
-        path: 'https://www.geeksforgeeks.org/how-to-create-an-html-button-that-acts-like-a-link/',},
+    {name: iconReact,
+        id: "iconReact",
+        path: '#',},
+    {name: iconSass,
+        id: "iconSass",
+        path: '#',},
 ]
 
 const WrappSkillButtons = styled.div`
@@ -44,7 +42,7 @@ const Invitation = styled.p`
 const WrappIcons = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 `
 
 const WrappIcon = styled.a`
@@ -58,7 +56,8 @@ const WrappIcon = styled.a`
   align-items: center;
   font-size: ${props => props.theme.fontSizes.fsB2};
   color:   ${props => props.theme.colors.colorText};
-        `
+  margin-right: 20px;
+`
 
 const SkillButtons = () => {
 
@@ -70,7 +69,7 @@ const SkillButtons = () => {
 
     return (
         <WrappSkillButtons>
-            <Invitation>Moje umiejętności</Invitation>
+            <Invitation>Mój stack</Invitation>
             <WrappIcons>
                 {skillIcon}
             </WrappIcons>

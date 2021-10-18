@@ -63,10 +63,10 @@ const NavigationLink = styled.a`
   :active {
     color:  ${props => props.theme.colors.colorPrimary}}`
 
-const MPNavigation = ({mpNavigationArray}) => {
+const MPNavigation = ({mpNavigationArray, searchId}) => {
 
-    const npNavigationItem = mpNavigationArray.map( (item) => (
-        <NavigationLi key={item.id}>
+    const mpNavigationItem = mpNavigationArray.map( (item) => (
+        <NavigationLi key={item.id} onClick={() => searchId (item.id)}>
             <NavigationLink href={"#"}>{item.name}</NavigationLink>
         </NavigationLi>
     ));
@@ -75,7 +75,7 @@ const MPNavigation = ({mpNavigationArray}) => {
         <WrappMPNavigation>
             <nav>
                 <NavigationUl>
-                    {npNavigationItem}
+                    {mpNavigationItem }
                 </NavigationUl>
             </nav>
         </WrappMPNavigation>

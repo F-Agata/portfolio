@@ -13,16 +13,14 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 const iconFaBars = <FontAwesomeIcon icon={faBars} />
 
 const menuItems = [
-    {name: "Strona 1",
+    {name: "Hello",
      id: "menu1",},
-    {name: "Strona 2",
+    {name: "O mnie",
      id: "menu2",},
-    {name: "Strona 3",
+    {name: "Projekty",
      id: "menu3",},
-    {name: "Strona 4",
-     id: "menu4",},
-    {name: "Strona 5",
-     id: "menu5",}]
+    {name: "Kontakt",
+     id: "menu4",}]
 
 const NavigationBasicStyle = styled.aside`
   height: 90px;
@@ -48,8 +46,14 @@ const WrappNavigation = styled.div`
 
 const WrappLogo = styled.div`
   height: 60px;
-  margin-left: 30px;
+  //margin-left: 30px;
+  padding-top: 10px;
   text-align: left;
+  display: flex;
+  align-items: center;
+  img {
+    height: 40px;
+  }
   `
 
 const Logo = styled.img`

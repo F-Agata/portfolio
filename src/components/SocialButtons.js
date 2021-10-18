@@ -2,27 +2,26 @@ import React from "react";
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-const iconFaXMark = <FontAwesomeIcon icon={faTimes} />
+const iconGithub = <FontAwesomeIcon icon={faGithub} />
+const iconLinkedin = <FontAwesomeIcon icon={faLinkedin} />
 
 const socialIconsArray = [
-    {name: iconFaXMark,
-        id: "iconFaXMark1",
-        path: 'https://www.geeksforgeeks.org/how-to-create-an-html-button-that-acts-like-a-link/',},
-    {name: iconFaXMark,
-        id: "iconFaXMark2",
-        path: 'https://www.geeksforgeeks.org/how-to-create-an-html-button-that-acts-like-a-link/',},
-    {name: iconFaXMark,
-        id: "iconFaXMark3",
-        path: 'https://www.geeksforgeeks.org/how-to-create-an-html-button-that-acts-like-a-link/',},
+    {name: iconGithub,
+        id: "iconGithub",
+        path: 'https://github.com/F-Agata',},
+    {name: iconLinkedin,
+        id: "iconLinkedin",
+        path: 'https://linkedin.com',},
    ]
 
 const WrappSocialButtons = styled.div`
   //border: red 2px solid;
-    display: flex;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
   width: 200px;
 `
 const Invitation = styled.p`
@@ -31,6 +30,7 @@ const Invitation = styled.p`
   font-size: ${props => props.theme.fontSizes.fsB3};
   font-family: ${props => props.theme.fonts.fontPrimary};
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 2px;
   margin-bottom: 20px;
   font-weight: 700;
@@ -39,7 +39,7 @@ const Invitation = styled.p`
 const WrappIcons = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 `
 
 const WrappIcon = styled.a`
@@ -53,7 +53,8 @@ const WrappIcon = styled.a`
   align-items: center;
   font-size: ${props => props.theme.fontSizes.fsB2};
   color:  ${props => props.colorPrimary ? props.theme.colors.colorPrimary : props.theme.colors.colorText};
-        `
+  margin-right: 20px;
+`
 
 const SocialButtons = ({colorPrimary}) => {
 
