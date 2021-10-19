@@ -10,7 +10,7 @@ const WrappMPNavigation = styled.div`
   border-radius: 10px;
   box-shadow: ${props => props.theme.shadows.shadowWhite};
   background: ${props => props.theme.gradients.gradientBox};
-  @media (min-width: 992px) {
+  @media (min-width: 1080px) {
     height: 90px;
   }`
 
@@ -20,7 +20,7 @@ const NavigationUl = styled.div`
   justify-content: center;
   align-items: center;
   //border: 2px saddlebrown solid;
-  @media (min-width: 992px) {
+  @media (min-width: 1080px) {
     flex-direction: row;
     height: 90px;
   `
@@ -44,7 +44,7 @@ const NavigationLi = styled.div`
   :hover p {
     color:  ${props => props.theme.colors.colorPrimary};
   }
-  @media (min-width: 992px) {
+  @media (min-width: 1080px) {
     height: 90px;
 `
 
