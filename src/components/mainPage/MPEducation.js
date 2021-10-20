@@ -9,7 +9,8 @@ import TitleOfSection from "../../styles/TitleOfSection";
 import SmallTitleMPOneItem from "../../styles/SmallTitleMPOneItem";
 import Circle from "../../styles/Circle";
 import DashFromTheCircle from "../../styles/DashFromTheCircle";
-import NavigationListSmall from "../navigation/NavigationListSmall";
+import WrappMPEssence from "../../styles/WrappMPEssence";
+
 
 
 const WrappMPEducation = styled.div`
@@ -20,23 +21,10 @@ const WrappMPEducation = styled.div`
 
 const TitleEducation = styled(TitleOfSection)`
   width: 100%;
-  margin: 0 0 20px 0;
-  padding-bottom: 20px;
+  margin: 0 0 40px 0;
   //border-bottom: 5px solid ${props => props. theme.colors.colorGrayLighter} ;
  `
 
-const WrappMPText = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  //border: 2px solid olive;
-  @media (min-width: 1080px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-`
 const WrappOneSchool = styled(WrappMPOneItem)` 
     position: relative;
 `
@@ -57,7 +45,7 @@ const MPEducation = () => {
         <WrappMPEducation>
             { !showDecorationLine ?
                 <WrappLineDecoration/> : null}
-            <WrappMPText>
+            <WrappMPEssence>
                 <TitleEducation>
                      Edukacja
                 </TitleEducation>
@@ -77,7 +65,7 @@ const MPEducation = () => {
                    <Yers> 2002 – 2005 </Yers>
                    <NameOfSchool> I Liceum Ogólnokształcące im. Leona Kruczkowskiego w Tychach</NameOfSchool>
                 </WrappOneSchool>
-            </WrappMPText>
+            </WrappMPEssence>
         </WrappMPEducation>
     )
 }

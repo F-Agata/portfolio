@@ -1,38 +1,33 @@
 import React from "react";
 import styled from 'styled-components'
 
+import { useMediaQuery } from 'react-responsive'
+
 import WrappLineDecoration from "../WrappLineDecoration";
 
-import TitleOfSection from "../../styles/TitleOfSection";
 import WrappMPOneItem from "../../styles/WrappMPOneItem";
+import TitleOfSection from "../../styles/TitleOfSection";
 import SmallTitleMPOneItem from "../../styles/SmallTitleMPOneItem";
+import Circle from "../../styles/Circle";
+import DashFromTheCircle from "../../styles/DashFromTheCircle";
+import WrappMPEssence from "../../styles/WrappMPEssence";
 
 const WrappMPExperience = styled.div`
   width: 100%;
+  //border: 2px solid orangered;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  //border: 2px solid olive;
-  @media (min-width: 1080px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-      }
 `
 
 const TitleExperience = styled(TitleOfSection)`
     width: 100%;
   margin: 0 0 40px 0;
 `
-
-const WrappOneJob = styled(WrappMPOneItem)`  
+const WrappOneJob = styled(WrappMPOneItem)`
+  position: relative;
 `
 
 const Yers = styled(SmallTitleMPOneItem)`
-  span {
-      text-align: right;
-    color: olive;
-    }  
+  
   `
 const NameOfJob = styled.p`
     margin: 10px 0 0 0 `
@@ -40,20 +35,31 @@ const NameOfJob = styled.p`
 
 const MPExperience = () => {
 
+    const showDecorationLine = useMediaQuery({query: '(min-width: 1080px)' })
+
     return (
         <WrappMPExperience>
-            <TitleExperience>
-                Doświadczenie zawodowe
-            </TitleExperience>
-            <WrappOneJob>
-                <Yers> 04.2011 – 12.2020 </Yers>
-                <NameOfJob> Apteka „Avicenna” sp. j. w Tychach </NameOfJob>
-            </WrappOneJob>
-
-            <WrappOneJob>
-                <Yers> 09.2011 – 06.2012 </Yers>
-                <NameOfJob> Apteka „Św. Anny” w Tychach (praca dodatkowa)</NameOfJob>
-            </WrappOneJob>
+            { !showDecorationLine ?
+                <WrappLineDecoration/> : null}
+            <WrappMPEssence>
+                <TitleExperience>
+                    Doświadczenie zawodowe
+                </TitleExperience>
+                { showDecorationLine ?
+                    <WrappLineDecoration/> : null}
+                <WrappOneJob>
+                    <Circle/>
+                    <DashFromTheCircle/>
+                    <Yers> 04.2011 – 12.2020 </Yers>
+                    <NameOfJob> Apteka „Avicenna” sp. j. w Tychach </NameOfJob>
+                </WrappOneJob>
+                <WrappOneJob>
+                    <Circle/>
+                    <DashFromTheCircle/>
+                    <Yers> 09.2011 – 06.2012 </Yers>
+                    <NameOfJob> Apteka „Św. Anny” w Tychach (praca dodatkowa)</NameOfJob>
+                </WrappOneJob>
+            </WrappMPEssence>
         </WrappMPExperience>
     )
 }
