@@ -125,7 +125,8 @@ const Navigation = () => {
                 <ToggleMenuButton onClick={changeMenu}>
                   {iconFaBars}
                 </ToggleMenuButton>
-            </WrapIcon>}
+            </WrapIcon>
+            }
             { isOpen && !modificationMenuSize ?
                 <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} /> : null}
             { modificationMenuSize &&

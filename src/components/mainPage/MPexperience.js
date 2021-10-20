@@ -1,5 +1,8 @@
 import React from "react";
 import styled from 'styled-components'
+
+import WrappLineDecoration from "../WrappLineDecoration";
+
 import TitleOfSection from "../../styles/TitleOfSection";
 import WrappMPOneItem from "../../styles/WrappMPOneItem";
 import SmallTitleMPOneItem from "../../styles/SmallTitleMPOneItem";
