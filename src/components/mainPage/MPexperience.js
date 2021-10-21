@@ -11,56 +11,37 @@ import SmallTitleMPOneItem from "../../styles/SmallTitleMPOneItem";
 import Circle from "../../styles/Circle";
 import DashFromTheCircle from "../../styles/DashFromTheCircle";
 import WrappMPEssence from "../../styles/WrappMPEssence";
-
-const WrappMPExperience = styled.div`
-  width: 100%;
-  //border: 2px solid orangered;
-  display: flex;
-`
-
-const TitleExperience = styled(TitleOfSection)`
-    width: 100%;
-  margin: 0 0 40px 0;
-`
-const WrappOneJob = styled(WrappMPOneItem)`
-  position: relative;
-`
-
-const Yers = styled(SmallTitleMPOneItem)`
-  
-  `
-const NameOfJob = styled.p`
-    margin: 10px 0 0 0 `
-
+import WrappMPSection from "../../styles/WrappMPSection";
+import MPText from "../../styles/MPText";
 
 const MPExperience = () => {
 
     const showDecorationLine = useMediaQuery({query: '(min-width: 1080px)' })
 
     return (
-        <WrappMPExperience>
+        <WrappMPSection>
             { !showDecorationLine ?
                 <WrappLineDecoration/> : null}
             <WrappMPEssence>
-                <TitleExperience>
+                <TitleOfSection>
                     Doświadczenie zawodowe
-                </TitleExperience>
+                </TitleOfSection>
                 { showDecorationLine ?
                     <WrappLineDecoration/> : null}
-                <WrappOneJob>
+                <WrappMPOneItem>
                     <Circle/>
                     <DashFromTheCircle/>
-                    <Yers> 04.2011 – 12.2020 </Yers>
-                    <NameOfJob> Apteka „Avicenna” sp. j. w Tychach </NameOfJob>
-                </WrappOneJob>
-                <WrappOneJob>
+                    <SmallTitleMPOneItem> 04.2011 – 12.2020 </SmallTitleMPOneItem>
+                    <MPText> Apteka „Avicenna” sp. j. w Tychach </MPText>
+                </WrappMPOneItem>
+                <WrappMPOneItem>
                     <Circle/>
                     <DashFromTheCircle/>
-                    <Yers> 09.2011 – 06.2012 </Yers>
-                    <NameOfJob> Apteka „Św. Anny” w Tychach (praca dodatkowa)</NameOfJob>
-                </WrappOneJob>
+                    <SmallTitleMPOneItem> 09.2011 – 06.2012 </SmallTitleMPOneItem>
+                    <MPText> Apteka „Św. Anny” w Tychach (praca dodatkowa)</MPText>
+                </WrappMPOneItem>
             </WrappMPEssence>
-        </WrappMPExperience>
+        </WrappMPSection>
     )
 }
 

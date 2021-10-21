@@ -10,66 +10,44 @@ import SmallTitleMPOneItem from "../../styles/SmallTitleMPOneItem";
 import Circle from "../../styles/Circle";
 import DashFromTheCircle from "../../styles/DashFromTheCircle";
 import WrappMPEssence from "../../styles/WrappMPEssence";
+import WrappMPSection from "../../styles/WrappMPSection";
+import MPText from "../../styles/MPText";
 
-
-
-const WrappMPEducation = styled.div`
-  width: 100%;
-  //border: 2px solid orangered;
-  display: flex;
-`
-
-const TitleEducation = styled(TitleOfSection)`
-  width: 100%;
-  margin: 0 0 40px 0;
-   `
-
-const WrappOneSchool = styled(WrappMPOneItem)` 
-    position: relative;
-`
-
-const Yers = styled(SmallTitleMPOneItem)`
-
+const Mgrfarm = styled(SmallTitleMPOneItem)`
 //border: #61dafb 2px solid;
-margin-top:  ${props => props.mgrfarm ? '10px' : '0px'};
-border-bottom-width: ${props => props.mgrfarm ? '0px' : '1px'};
-font-size: ${props => props.mgrfarm ? props.theme.fontSizes.fsB3 : props.theme.fontSizes.fsB1 };
-  
-   `
+margin-top: 10px;
+border-bottom: none;
+font-size: ${props => props.theme.fontSizes.fsB3};
+`
 
-const NameOfSchool = styled.p`
-    margin: 10px 0 0 0 ;
- `
 const MPEducation = () => {
 
     const showDecorationLine = useMediaQuery({query: '(min-width: 1080px)' })
 
     return (
-        <WrappMPEducation>
-            { !showDecorationLine ?
-                <WrappLineDecoration/> : null}
+        <WrappMPSection>
+            { !showDecorationLine ?  <WrappLineDecoration/> : null}
             <WrappMPEssence>
-                <TitleEducation>
+                <TitleOfSection>
                      Edukacja
-                </TitleEducation>
-                { showDecorationLine ?
-                    <WrappLineDecoration/> : null}
-                <WrappOneSchool>
+                </TitleOfSection>
+                { showDecorationLine ? <WrappLineDecoration/> : null}
+                <WrappMPOneItem>
                     <Circle/>
                     <DashFromTheCircle/>
-                   <Yers> 2005 – 2011  </Yers>
-                   <NameOfSchool> Śląski Uniwersytet Medyczny w Katowicach </NameOfSchool>
-                   <NameOfSchool> Wydział Farmaceutyczny z Oddziałem Medycyny Laboratoryjnej w Sosnowcu</NameOfSchool>
-                   <Yers mgrfarm> mgr farmacji  </Yers>
-                </WrappOneSchool>
-                <WrappOneSchool>
+                   <SmallTitleMPOneItem> 2005 – 2011  </SmallTitleMPOneItem>
+                   <MPText> Śląski Uniwersytet Medyczny w Katowicach </MPText>
+                   <MPText> Wydział Farmaceutyczny z Oddziałem Medycyny Laboratoryjnej w Sosnowcu</MPText>
+                   <Mgrfarm> mgr farmacji  </Mgrfarm>
+                </WrappMPOneItem>
+                <WrappMPOneItem>
                     <Circle/>
                     <DashFromTheCircle/>
-                   <Yers> 2002 – 2005 </Yers>
-                   <NameOfSchool> I Liceum Ogólnokształcące im. Leona Kruczkowskiego w Tychach</NameOfSchool>
-                </WrappOneSchool>
+                   <SmallTitleMPOneItem> 2002 – 2005 </SmallTitleMPOneItem>
+                   <MPText> I Liceum Ogólnokształcące im. Leona Kruczkowskiego w Tychach</MPText>
+                </WrappMPOneItem>
              </WrappMPEssence>
-        </WrappMPEducation>
+        </WrappMPSection>
     )
 }
 
