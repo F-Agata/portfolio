@@ -35,6 +35,18 @@ const MPEducation = () => {
                      Edukacja
                 </TitleOfSection>
                 { showDecorationLine ? <WrappLineDecoration/> : null}
+              <WrappMPOneItem>
+                <Circle/>
+                <DashFromTheCircle/>
+                <SmallTitleMPOneItem> 2020 – 2021  </SmallTitleMPOneItem>
+                <MPText> Front-end developer </MPText>
+                <MPText> Nauka i rozwój umiejętności niezbędnych do pracy w zawodzie.</MPText>
+                <MPText> Kursy i inne źródła wiedzy:</MPText>
+                <ul>
+                  <li>WTF - co ten frontend</li>
+                  <li>Samuraj programowania</li>
+                </ul>
+              </WrappMPOneItem>
                 <WrappMPOneItem
                     onMouseEnter={()=>{setIsActiveEdu1(true)}}
                     onMouseLeave={()=>{setIsActiveEdu1(false)}}

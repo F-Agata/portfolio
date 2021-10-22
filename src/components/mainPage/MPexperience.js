@@ -31,6 +31,18 @@ const MPExperience = () => {
                 </TitleOfSection>
                 { showDecorationLine ?
                     <WrappLineDecoration/> : null}
+                <WrappMPOneItem>
+                    <Circle/>
+                    <DashFromTheCircle/>
+                    <SmallTitleMPOneItem>od 09.2021 do obecnie</SmallTitleMPOneItem>
+                    <MPText>Staż w Rubinowe Sp. z o.o. </MPText>
+                    <MPText>stanowisko: junior front-end developer </MPText>
+                    <MPText>Zakres obowiązków: </MPText>
+                    <ul>
+                        <li>stylowanie komponentów</li>
+                        <li>tworzenie widoków stron w React jsx</li>
+                    </ul>
+                </WrappMPOneItem>
                 <WrappMPOneItem
                     onMouseEnter={()=>{setIsActiveExp1(true)}}
                     onMouseLeave={()=>{setIsActiveExp1(false)}}
