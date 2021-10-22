@@ -7,11 +7,11 @@ import MPNavigation from "./MPNavigation";
 import MPSkills from "./MPSkills";
 
 const mpNavigationArray = [
-    {name: 'edukacja',
-        id: "MPNavigation1",
-    },
     {name: 'doświadczenie zawodowe',
         id: "MPNavigation2",
+    },
+    {name: 'edukacja',
+        id: "MPNavigation1",
     },
     {name: 'umiejętności',
         id: "MPNavigation3",

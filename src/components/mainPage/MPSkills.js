@@ -24,6 +24,41 @@ const MPSkills = () => {
                     Umiejętności
                 </TitleOfSection>
                 { showDecorationLine ? <WrappLineDecoration/> : null}
+                <WrappMPOneItem mpskills>
+                    <Circle/>
+                    <DashFromTheCircle/>
+                    <SmallTitleMPOneItem> 2005 – 2011  </SmallTitleMPOneItem>
+                    <MPText> Śląski Uniwersytet Medyczny w Katowicach </MPText>
+                    <MPText> Wydział Farmaceutyczny z Oddziałem Medycyny Laboratoryjnej w Sosnowcu</MPText>
+                </WrappMPOneItem>
+                <WrappMPOneItem mpskills>
+                    <Circle/>
+                    <DashFromTheCircle/>
+                    <SmallTitleMPOneItem> 2005 – 2011  </SmallTitleMPOneItem>
+                    <MPText> Śląski Uniwersytet Medyczny w Katowicach </MPText>
+                    <MPText> Wydział Farmaceutyczny z Oddziałem Medycyny Laboratoryjnej w Sosnowcu</MPText>
+                </WrappMPOneItem>
+                <WrappMPOneItem mpskills>
+                    <Circle/>
+                    <DashFromTheCircle/>
+                    <SmallTitleMPOneItem> 2005 – 2011  </SmallTitleMPOneItem>
+                    <MPText> Śląski Uniwersytet Medyczny w Katowicach </MPText>
+                    <MPText> Wydział Farmaceutyczny z Oddziałem Medycyny Laboratoryjnej w Sosnowcu</MPText>
+                </WrappMPOneItem>
+                <WrappMPOneItem mpskills>
+                    <Circle/>
+                    <DashFromTheCircle/>
+                    <SmallTitleMPOneItem> 2005 – 2011  </SmallTitleMPOneItem>
+                    <MPText> Śląski Uniwersytet Medyczny w Katowicach </MPText>
+                    <MPText> Wydział Farmaceutyczny z Oddziałem Medycyny Laboratoryjnej w Sosnowcu</MPText>
+                </WrappMPOneItem>
+                <WrappMPOneItem mpskills>
+                    <Circle/>
+                    <DashFromTheCircle/>
+                    <SmallTitleMPOneItem> 2005 – 2011  </SmallTitleMPOneItem>
+                    <MPText> Śląski Uniwersytet Medyczny w Katowicach </MPText>
+                    <MPText> Wydział Farmaceutyczny z Oddziałem Medycyny Laboratoryjnej w Sosnowcu</MPText>
+                </WrappMPOneItem>
             </WrappMPEssence>
         </WrappMPSection>
     )

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components'
 
 import { useMediaQuery } from 'react-responsive'
@@ -18,6 +18,9 @@ const MPExperience = () => {
 
     const showDecorationLine = useMediaQuery({query: '(min-width: 1080px)' })
 
+    const [isActiveExp1, setIsActiveExp1] = useState(false);
+    const [isActiveExp2, setIsActiveExp2] = useState(false);
+
     return (
         <WrappMPSection>
             { !showDecorationLine ?
@@ -28,14 +31,20 @@ const MPExperience = () => {
                 </TitleOfSection>
                 { showDecorationLine ?
                     <WrappLineDecoration/> : null}
-                <WrappMPOneItem>
-                    <Circle/>
+                <WrappMPOneItem
+                    onMouseEnter={()=>{setIsActiveExp1(true)}}
+                    onMouseLeave={()=>{setIsActiveExp1(false)}}
+                >
+                    <Circle isActive={isActiveExp1} />
                     <DashFromTheCircle/>
                     <SmallTitleMPOneItem> 04.2011 – 12.2020 </SmallTitleMPOneItem>
                     <MPText> Apteka „Avicenna” sp. j. w Tychach </MPText>
                 </WrappMPOneItem>
-                <WrappMPOneItem>
-                    <Circle/>
+                <WrappMPOneItem
+                    onMouseEnter={()=>{setIsActiveExp2(true)}}
+                    onMouseLeave={()=>{setIsActiveExp2(false)}}
+                >
+                    <Circle isActive={isActiveExp2} />
                     <DashFromTheCircle/>
                     <SmallTitleMPOneItem> 09.2011 – 06.2012 </SmallTitleMPOneItem>
                     <MPText> Apteka „Św. Anny” w Tychach (praca dodatkowa)</MPText>

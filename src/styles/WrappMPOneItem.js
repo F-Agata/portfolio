@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 const WrappMPOneItem = styled.div`
   margin: 0 0 40px 0px ;
   box-shadow: ${props => props.theme.shadows.shadowWhite};
@@ -13,10 +12,13 @@ const WrappMPOneItem = styled.div`
   //border: 2px solid red;
   align-self: stretch;
   position: relative;
-  @media (min-width: 1080px) {
+   @media (min-width: 1080px) {
     margin-left: 0;
-    width: 49%;
+    width: ${props => props.mpskills? "18%" : "49%"};
+    //width: 49%;
+    
   }
 `
 
 export default WrappMPOneItem;
+

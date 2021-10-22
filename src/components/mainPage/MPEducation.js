@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 
@@ -24,6 +24,9 @@ const MPEducation = () => {
 
     const showDecorationLine = useMediaQuery({query: '(min-width: 1080px)' })
 
+    const [isActiveEdu1, setIsActiveEdu1] = useState(false);
+    const [isActiveEdu2, setIsActiveEdu2] = useState(false);
+
     return (
         <WrappMPSection>
             { !showDecorationLine ?  <WrappLineDecoration/> : null}
@@ -32,16 +35,22 @@ const MPEducation = () => {
                      Edukacja
                 </TitleOfSection>
                 { showDecorationLine ? <WrappLineDecoration/> : null}
-                <WrappMPOneItem>
-                    <Circle/>
+                <WrappMPOneItem
+                    onMouseEnter={()=>{setIsActiveEdu1(true)}}
+                    onMouseLeave={()=>{setIsActiveEdu1(false)}}
+                >
+                    <Circle isActive={isActiveEdu1}/>
                     <DashFromTheCircle/>
                    <SmallTitleMPOneItem> 2005 – 2011  </SmallTitleMPOneItem>
                    <MPText> Śląski Uniwersytet Medyczny w Katowicach </MPText>
                    <MPText> Wydział Farmaceutyczny z Oddziałem Medycyny Laboratoryjnej w Sosnowcu</MPText>
                    <Mgrfarm> mgr farmacji  </Mgrfarm>
                 </WrappMPOneItem>
-                <WrappMPOneItem>
-                    <Circle/>
+                <WrappMPOneItem
+                    onMouseEnter={()=>{setIsActiveEdu2(true)}}
+                    onMouseLeave={()=>{setIsActiveEdu2(false)}}
+                >
+                    <Circle isActive={isActiveEdu2}/>
                     <DashFromTheCircle/>
                    <SmallTitleMPOneItem> 2002 – 2005 </SmallTitleMPOneItem>
                    <MPText> I Liceum Ogólnokształcące im. Leona Kruczkowskiego w Tychach</MPText>

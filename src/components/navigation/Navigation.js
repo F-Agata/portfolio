@@ -46,7 +46,7 @@ const WrappNavigation = styled.div`
 
 const WrappLogo = styled.div`
   height: 60px;
-  //margin-left: 30px;
+  margin-left: 30px;
   padding-top: 10px;
   text-align: left;
   display: flex;
