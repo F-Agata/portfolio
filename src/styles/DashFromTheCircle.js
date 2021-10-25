@@ -10,10 +10,13 @@ const DashFromTheCircle = styled.div`
   top: 49px;
   @media (min-width: 1080px) {
     left: 40px;
-    top: -32px;
+    top: ${props => props.presentTime? "unset" : "-32px"};
+    bottom: ${props => props.presentTime? "-32px" : "none"};
     height: 32px;
     width: 4px;
   }
 `;
 
 export default DashFromTheCircle;
+
+

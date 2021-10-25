@@ -20,6 +20,7 @@ const MPExperience = () => {
 
     const [isActiveExp1, setIsActiveExp1] = useState(false);
     const [isActiveExp2, setIsActiveExp2] = useState(false);
+    const [isActiveExp3, setIsActiveExp3] = useState(false);
 
     return (
         <WrappMPSection>
@@ -29,8 +30,32 @@ const MPExperience = () => {
                 <TitleOfSection>
                     Doświadczenie zawodowe
                 </TitleOfSection>
+
+
+                <WrappMPOneItem
+                    onMouseEnter={()=>{setIsActiveExp3(true)}}
+                    onMouseLeave={()=>{setIsActiveExp3(false)}}
+                    presentTime
+                >
+                    <Circle isActive={isActiveExp3} presentTime/>
+                    <DashFromTheCircle presentTime/>
+                    { !showDecorationLine ?
+                        <SmallTitleMPOneItem>od 09.2021 do obecnie</SmallTitleMPOneItem> : null}
+                    <MPText presentTime>Staż w Rubinowe Sp. z o.o. </MPText>
+                    <MPText presentTime>stanowisko: junior front-end developer </MPText>
+                    <MPText presentTime>Zakres obowiązków: </MPText>
+                    <ul>
+                        <li>stylowanie komponentów</li>
+                        <li>tworzenie widoków stron w React jsx</li>
+                    </ul>
+                    { showDecorationLine ?
+                        <SmallTitleMPOneItem presentTime>od 09.2021 do obecnie</SmallTitleMPOneItem> : null}
+                </WrappMPOneItem>
+
+
                 { showDecorationLine ?
                     <WrappLineDecoration/> : null}
+
                 <WrappMPOneItem
                     onMouseEnter={()=>{setIsActiveExp1(true)}}
                     onMouseLeave={()=>{setIsActiveExp1(false)}}

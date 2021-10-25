@@ -13,11 +13,9 @@ const WrappMPOneItem = styled.div`
   align-self: stretch;
   position: relative;
    @media (min-width: 1080px) {
-    margin-left: 0;
-    width: ${props => props.mpskills? "18%" : "49%"};
-    //width: 49%;
-    
-  }
+    margin-left: ${props => props.presentTime? "0px" : "40px"};
+    width: ${props => props.presentTime? "100%" : "45%"};
+     }
 `
 
 export default WrappMPOneItem;

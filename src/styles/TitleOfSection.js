@@ -12,3 +12,4 @@ const TitleOfSection = styled.h2`
     `;
 
 export default TitleOfSection;
+
