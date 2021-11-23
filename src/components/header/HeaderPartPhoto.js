@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 import headerPhoto from '../../pictures/banner-01.png'
+import agata from '../../pictures/agata.png'
 
 const WrappBigPhoto = styled.div`
   max-width: 900px;
@@ -41,7 +42,7 @@ const HeaderPartPhoto = () => {
                 <WrappBigPhoto>
                     <ShadowDiv/>
                     <WrappSmallPhoto>
-                        <PhotoMy src={headerPhoto} alt={"I'm"}/>
+                        <PhotoMy src={agata} alt={"I'm"}/>
                     </WrappSmallPhoto>
                 </WrappBigPhoto>
     )
