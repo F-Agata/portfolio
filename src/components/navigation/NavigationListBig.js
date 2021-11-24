@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 const NavigationWrapp = styled.div`
   align-self: center;
-  margin-right: 30px;
+  //margin-right: 30px;
   //border: 2px solid purple;
-`
+ `
 
 const NavigationUl = styled.ul`
   display: flex;

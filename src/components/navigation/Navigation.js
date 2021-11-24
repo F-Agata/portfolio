@@ -41,18 +41,21 @@ const WrappNavigation = styled.div`
   align-items: center;
   justify-content: space-between;
     @media (min-width: 992px) {
-    padding: 0px 60px
+    padding: 0px 40px
   }`
 
 const WrappLogo = styled.div`
   height: 60px;
-  margin-left: 30px;
+  margin-left: 40px;
   padding-top: 10px;
   text-align: left;
   display: flex;
   align-items: center;
   img {
     height: 40px;
+  }
+  @media (min-width: 992px) {
+    margin-left: 0px;
   }
   `
 
@@ -61,8 +64,11 @@ const Logo = styled.img`
 
 const WrapIcon = styled.div`
   height: 30px;
-  margin-right: 30px;
+  margin-right: 40px;
   text-align: right;
+  @media (min-width: 992px) {
+    margin-right: 0px;
+  }
   `
 const ToggleMenuButton = styled.button`
   background: transparent;
