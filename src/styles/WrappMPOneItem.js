@@ -4,7 +4,7 @@ const WrappMPOneItem = styled.div`
   margin: 0 0 40px 0px ;
   box-shadow: ${props => props.theme.shadows.shadowWhite};
   background: ${props => props.theme.gradients.gradientBox};
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

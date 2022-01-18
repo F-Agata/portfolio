@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
-import { useMediaQuery } from 'react-responsive'
 
-import WrappMPOneItem from "../../styles/WrappMPOneItem";
 import MPText from "../../styles/MPText";
 import TitleOfSection from "../../styles/TitleOfSection";
 
@@ -28,10 +26,27 @@ const portfolioArray = [
     id: 'form',
     photo: form,
     skills: "html, css, jsx",
-  }
+  },
+    {
+        name: 'memory1',
+        id: 'memory1',
+        photo: memory,
+        skills: "html, css, jsx",
+    },
+    {
+        name: 'quiz1',
+        id: 'quiz1',
+        photo: quiz,
+        skills: "html, css, jsx",
+    },
+    {
+        name: 'form1',
+        id: 'form1',
+        photo: form,
+        skills: "html, css, jsx",
+    }
 ]
 
-// { setIsActiveProject({...isActiveProjects, [`isActiveProject${index+1}`]: true }) }
 
 const MainPortfolio = () => {
 
@@ -54,9 +69,7 @@ const MainPortfolio = () => {
           });}
 
 
-  const showDecorationLine = useMediaQuery({ query: '(min-width: 1080px)' })
-
-  const oneProject = portfolioArray.map((item, index) => {
+   const oneProject = portfolioArray.map((item, index) => {
 
   const isActive = isActiveProjects[`isActiveProject${index + 1}`]
 
@@ -69,8 +82,10 @@ const MainPortfolio = () => {
                   <WrappImgPF>
                       <ImgPF src={item.photo} />
                   </WrappImgPF>
-                  <MPText>{item.skills}</MPText>
-                  <TitleOfSection>{item.name}</TitleOfSection>
+                  <WrappInfo>
+                      <MPText>{item.skills}</MPText>
+                     <TitleOfSection>{item.name}</TitleOfSection>
+                  </WrappInfo>
               </WrappOneProject>
           )
       }
@@ -96,32 +111,77 @@ const WrappMainPortfolio = styled.section`
   flex-direction: column;
   align-items: center;
   //border: limegreen solid 2px;
-  @media (min-width: 992px) {
-     }`
+  @media (min-width: 700px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  `
 
 const WrappOneProject = styled.div`
+  width: 100%;
   margin: 0 0 40px 0px;
   box-shadow: ${props => props.theme.shadows.shadowWhite};
   bbackground: ${props => props.dataIsActiv ? props.theme.colors.colorPrimary : props.theme.gradients.gradientBox};order-radius: 5px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   padding: 40px;
-  //border: 2px solid red;
-  //align-self: stretch;
-  @media (min-width: 1080px) {
-    
+  align-self: center;
+  border-radius: 10px;
+  //border: 2px solid pink;
+  @media (min-width: 550px) {
+     width: 80%;
   }
-\`
-  
-  `
-
+  @media (min-width: 700px) {
+    flex-direction: row;
+    width: 49%;
+    justify-content: space-between;
+    align-self: stretch;
+  }
+  @media (min-width: 900px) {
+    width: 46%;
+  }
+  @media (min-width: 1080px) {
+    width: 32%;
+  }
+     `
 
 const WrappImgPF = styled.div`
+  width: 100%;
   border: 2px solid red;
-  border-radius: 5px;
+  border-radius: 10px;
+  //@media (min-width: 600px) {
+  //  width: 49%;
+  //    }
+  //@media (min-width: 900px) {
+  //  width: 100%;
+  //}
+  //@media (min-width: 1080px) {
+  //  width: 49%;
+  //}
+  
 `
 
 const ImgPF = styled.img`
+border-radius: 10px;
 width: 100%;
-height: 100%;`
+height: 100%;
+`
+
+const WrappInfo = styled.div `
+  width: 100%;
+  border: 2px solid green;
+  //@media (min-width: 600px) {
+  //  width: 49%;
+  //    }
+  //@media (min-width: 900px) {
+  //  width: 100%;
+  //}
+  //@media (min-width: 1080px) {
+  //  width: 49%;
+  //} 
+  
+`
