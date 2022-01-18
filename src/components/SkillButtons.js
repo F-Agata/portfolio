@@ -1,19 +1,23 @@
-import React from "react";
+import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faReact, faSass } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faSass } from '@fortawesome/free-brands-svg-icons'
 
 const iconReact = <FontAwesomeIcon icon={faReact} />
 const iconSass = <FontAwesomeIcon icon={faSass} />
 
 const skillIconsArray = [
-    {name: iconReact,
-        id: "iconReact",
-        path: '#',},
-    {name: iconSass,
-        id: "iconSass",
-        path: '#',},
+  {
+    name: iconReact,
+    id: 'iconReact',
+    path: '#'
+  },
+  {
+    name: iconSass,
+    id: 'iconSass',
+    path: '#'
+  }
 ]
 
 const WrappSkillButtons = styled.div`
@@ -60,22 +64,21 @@ const WrappIcon = styled.a`
 `
 
 const SkillButtons = () => {
+  const skillIcon = skillIconsArray.map((item) => (
+    <WrappIcon key={item.id} href={item.path}>
+      {item.name}
+    </WrappIcon>
+  ))
 
-    const skillIcon = skillIconsArray.map( (item) => (
-        <WrappIcon key={item.id} href={item.path} >
-            {item.name}
-        </WrappIcon>
-    ));
+  return (
+    <WrappSkillButtons>
+      <Invitation>Mój stack</Invitation>
+      <WrappIcons>
+        {skillIcon}
+      </WrappIcons>
+    </WrappSkillButtons>
 
-    return (
-        <WrappSkillButtons>
-            <Invitation>Mój stack</Invitation>
-            <WrappIcons>
-                {skillIcon}
-            </WrappIcons>
-        </WrappSkillButtons>
-
-    )
+  )
 }
 
-export default SkillButtons;
+export default SkillButtons

@@ -1,14 +1,49 @@
-import React from "react";
+import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import SocialButtons from "../SocialButtons";
+import SocialButtons from '../SocialButtons'
 
-import logo from "../../pictures/logo.svg";
+import logo from '../../pictures/logo.svg'
 
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const iconFaXMark = <FontAwesomeIcon icon={faTimes} />
+
+const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
+  const menuItem = menuItems.map((item) => (
+    <NavigationLi key={item.id}>
+      <NavigationLink href='#'>{item.name}</NavigationLink>
+    </NavigationLi>
+  ))
+
+  return (
+    <NavigationWrapp>
+      <NavigationListWrapp>
+        <TopMenu>
+          <WrappLogo>
+            <Logo src={logo} alt='logo' />
+          </WrappLogo>
+          <WrapIcon>
+            <ToggleMenuButton onClick={changeMenu}>
+              {iconFaXMark}
+            </ToggleMenuButton>
+          </WrapIcon>
+        </TopMenu>
+        <NavigationNav>
+          <NavigationUl>
+            {menuItem}
+          </NavigationUl>
+        </NavigationNav>
+        <BottomMenu>
+          <SocialButtons colorPrimary />
+        </BottomMenu>
+      </NavigationListWrapp>
+    </NavigationWrapp>
+  )
+}
+
+export default NavigationMainListSmall
 
 const NavigationWrapp = styled.div`
   position: fixed;
@@ -41,7 +76,7 @@ const TopMenu = styled.div`
   align-items: center`
 
 const WrappLogo = styled.div`
-  height: 60px;
+  height: 45px;
   text-align: left; 
 `
 
@@ -76,7 +111,7 @@ const NavigationUl = styled.ul`
   display: flex;
   flex-direction: column;
   height: 60px;`
-  //border: red 2px solid`
+// border: red 2px solid`
 
 const NavigationLi = styled.li`
   list-style: none;
@@ -104,39 +139,3 @@ const BottomMenu = styled.div`
   
   //border: yellow 2px solid;
 `
-
-const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
-
-    const menuItem = menuItems.map( (item) => (
-        <NavigationLi key={item.id}>
-            <NavigationLink href={"#"}>{item.name}</NavigationLink>
-        </NavigationLi>
-    ));
-
-     return (
-        <NavigationWrapp>
-            <NavigationListWrapp>
-             <TopMenu>
-                 <WrappLogo>
-                     <Logo src={logo} alt={"logo"}/>
-                 </WrappLogo>
-                 <WrapIcon>
-                     <ToggleMenuButton onClick={changeMenu}>
-                         {iconFaXMark}
-                     </ToggleMenuButton>
-                 </WrapIcon>
-             </TopMenu>
-             <NavigationNav>
-                <NavigationUl>
-                    {menuItem}
-                </NavigationUl>
-             </NavigationNav>
-             <BottomMenu>
-               <SocialButtons colorPrimary/>
-             </BottomMenu>
-            </NavigationListWrapp>
-        </NavigationWrapp>
-    )
-}
-
-export default NavigationMainListSmall;

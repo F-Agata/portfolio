@@ -1,20 +1,24 @@
-import React from "react";
+import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const iconGithub = <FontAwesomeIcon icon={faGithub} />
 const iconLinkedin = <FontAwesomeIcon icon={faLinkedin} />
 
 const socialIconsArray = [
-    {name: iconGithub,
-        id: "iconGithub",
-        path: 'https://github.com/F-Agata',},
-    {name: iconLinkedin,
-        id: "iconLinkedin",
-        path: 'https://linkedin.com',},
-   ]
+  {
+    name: iconGithub,
+    id: 'iconGithub',
+    path: 'https://github.com/F-Agata'
+  },
+  {
+    name: iconLinkedin,
+    id: 'iconLinkedin',
+    path: 'https://linkedin.com'
+  }
+]
 
 const WrappSocialButtons = styled.div`
   //border: red 2px solid;
@@ -56,24 +60,23 @@ const WrappIcon = styled.a`
   margin-right: 20px;
 `
 
-const SocialButtons = ({colorPrimary}) => {
+const SocialButtons = ({ colorPrimary }) => {
+  const socialIcon = socialIconsArray.map((item) => (
+    <WrappIcon key={item.id} href={item.path} colorPrimary={colorPrimary}>
+      {item.name}
+    </WrappIcon>
 
-    const socialIcon = socialIconsArray.map( (item) => (
-            <WrappIcon key={item.id} href={item.path} colorPrimary={colorPrimary}>
-                {item.name}
-            </WrappIcon>
+  ))
 
-    ));
+  return (
+    <WrappSocialButtons>
+      <Invitation>Znajdziesz mnie tu</Invitation>
+      <WrappIcons>
+        {socialIcon}
+      </WrappIcons>
+    </WrappSocialButtons>
 
-      return (
-          <WrappSocialButtons>
-            <Invitation>Znajdziesz mnie tu</Invitation>
-            <WrappIcons>
-                {socialIcon}
-            </WrappIcons>
-          </WrappSocialButtons>
-
-    )
+  )
 }
 
-export default SocialButtons;
+export default SocialButtons

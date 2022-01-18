@@ -1,8 +1,23 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import HeaderPartPhoto from "./HeaderPartPhoto";
-import HeaderPartText from "./HeaderPartText";
+import HeaderPartPhoto from './HeaderPartPhoto'
+import HeaderPartText from './HeaderPartText'
+
+const Header = () => {
+  return (
+    <WrappHeader>
+      <WrappHeaderPartPhoto>
+        <HeaderPartPhoto />
+      </WrappHeaderPartPhoto>
+      <WrappHeaderPartText>
+        <HeaderPartText />
+      </WrappHeaderPartText>
+    </WrappHeader>
+  )
+}
+
+export default Header
 
 const WrappHeader = styled.header`
   margin: 100px 40px 0 40px;
@@ -38,19 +53,3 @@ const WrappHeaderPartText = styled.div`
     max-width: 900px;
   }
 `
-
-const Header = () => {
-
-    return (
-        <WrappHeader>
-            <WrappHeaderPartPhoto>
-                <HeaderPartPhoto/>
-            </WrappHeaderPartPhoto>
-            <WrappHeaderPartText>
-                <HeaderPartText/>
-            </WrappHeaderPartText>
-        </WrappHeader>
-    )
-}
-
-export default Header

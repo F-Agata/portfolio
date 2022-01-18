@@ -1,5 +1,25 @@
-import React from "react";
+import React from 'react'
 import styled from 'styled-components'
+
+const NavigationMainListBig = ({ menuItems }) => {
+  const menuItem = menuItems.map((item) => (
+    <NavigationLi key={item.id}>
+      <NavigationLink href='#'>{item.name}</NavigationLink>
+    </NavigationLi>
+  ))
+
+  return (
+    <NavigationWrapp>
+      <nav>
+        <NavigationUl>
+          {menuItem}
+        </NavigationUl>
+      </nav>
+    </NavigationWrapp>
+  )
+}
+
+export default NavigationMainListBig
 
 const NavigationWrapp = styled.div`
   align-self: center;
@@ -41,24 +61,3 @@ const NavigationLink = styled.a`
   :active {
     color:  ${props => props.theme.colors.colorPrimary}}
 `
-
-const NavigationMainListBig = ({ menuItems }) => {
-
-    const menuItem = menuItems.map( (item) => (
-        <NavigationLi key={item.id}>
-            <NavigationLink href={"#"}>{item.name}</NavigationLink>
-        </NavigationLi>
-    ));
-
-    return (
-        <NavigationWrapp>
-            <nav>
-                <NavigationUl>
-                    {menuItem}
-                </NavigationUl>
-            </nav>
-        </NavigationWrapp>
-    )
-}
-
-export default NavigationMainListBig;

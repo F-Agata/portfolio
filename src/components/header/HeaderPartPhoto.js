@@ -1,8 +1,20 @@
 import React from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import headerPhoto from '../../pictures/banner-01.png'
 import agata from '../../pictures/agata.png'
+
+const HeaderPartPhoto = () => {
+  return (
+    <WrappBigPhoto>
+      <ShadowDiv />
+      <WrappSmallPhoto>
+        <PhotoMy src={agata} alt={"I'm"} />
+      </WrappSmallPhoto>
+    </WrappBigPhoto>
+  )
+}
+
+export default HeaderPartPhoto
 
 const WrappBigPhoto = styled.div`
   max-width: 900px;
@@ -35,17 +47,3 @@ const ShadowDiv = styled.div`
   background: ${props => props.theme.gradients.gradientBox};
   border-radius: 5px;
   `
-
-const HeaderPartPhoto = () => {
-
-    return (
-                <WrappBigPhoto>
-                    <ShadowDiv/>
-                    <WrappSmallPhoto>
-                        <PhotoMy src={agata} alt={"I'm"}/>
-                    </WrappSmallPhoto>
-                </WrappBigPhoto>
-    )
-}
-
-export default HeaderPartPhoto

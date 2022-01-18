@@ -1,9 +1,26 @@
-import React from "react";
+import React from 'react'
 import styled from 'styled-components'
 
-import SocialButtons from "../SocialButtons";
+import SocialButtons from '../SocialButtons'
 
-import logo from '../../pictures/logo.svg';
+import logo from '../../pictures/logo.svg'
+
+const Footer = () => {
+  return (
+    <WrappFooter>
+      <WrappLogo>
+        <Logo src={logo} alt='logo' />
+      </WrappLogo>
+      <SocialButtons />
+      <WrappContact>
+        <ContactPhone>609 594 597</ContactPhone>
+        <ContactMail>hello@agataf.pl</ContactMail>
+      </WrappContact>
+    </WrappFooter>
+  )
+}
+
+export default Footer
 
 const WrappFooter = styled.footer`
   margin:  0 40px;
@@ -50,22 +67,3 @@ const ContactPhone = styled.p`
 
 const ContactMail = styled.p`
 `
-
-
-const Footer = () => {
-
-    return (
-        <WrappFooter>
-            <WrappLogo>
-                <Logo src={logo} alt={"logo"}/>
-            </WrappLogo>
-            <SocialButtons/>
-            <WrappContact>
-                <ContactPhone>609 594 597</ContactPhone>
-                <ContactMail>hello@agataf.pl</ContactMail>
-            </WrappContact>
-        </WrappFooter>
-    )
-}
-
-export default Footer

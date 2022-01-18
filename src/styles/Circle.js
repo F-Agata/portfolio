@@ -9,12 +9,11 @@ const Circle = styled.div`
   position: absolute;
   left: -66px;
   @media (min-width: 1080px) {
-    //left: ${props => props.presentTime? "31px" : "31px"};
+    //left: ${props => props.presentTime ? '31px' : '31px'};
     left: 31px;
-    top: ${props => props.presentTime? "none" : "-53px"};
-    bottom: ${props => props.presentTime? "-53px" : "none"};
+    top: ${props => props.presentTime ? 'none' : '-53px'};
+    bottom: ${props => props.presentTime ? '-53px' : 'none'};
   }
-`;
+`
 
-export default Circle;
-
+export default Circle

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 const WrappMPEssence = styled.div`
   width: 100%;
   display: flex;
@@ -14,4 +13,4 @@ const WrappMPEssence = styled.div`
   }
 `
 
-export default WrappMPEssence;
+export default WrappMPEssence

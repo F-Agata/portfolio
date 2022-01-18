@@ -1,5 +1,23 @@
-import React from "react";
+import React from 'react'
 import styled from 'styled-components'
+
+const MPNavigation = ({ mpNavigationArray, setActiveTab, activeTab }) => {
+  const mpNavigationItem = mpNavigationArray.map(({ id, name }) => (
+    <NavigationLi key={id} onClick={() => setActiveTab(name)} isActive={activeTab === name}>
+      <NavigationText>{name}</NavigationText>
+    </NavigationLi>
+  ))
+
+  return (
+    <WrappMPNavigation>
+      <NavigationUl>
+        {mpNavigationItem}
+      </NavigationUl>
+    </WrappMPNavigation>
+  )
+}
+
+export default MPNavigation
 
 const WrappMPNavigation = styled.div`
   width: 100%;
@@ -62,22 +80,3 @@ const NavigationText = styled.p`
     height: 90px;
     line-height: 90px;
 `
-
-const MPNavigation = ({mpNavigationArray, setActiveTab, activeTab}) => {
-
-    const mpNavigationItem = mpNavigationArray.map( ({ id, name }) => (
-        <NavigationLi key={id} onClick={() => setActiveTab(name)} isActive={activeTab === name}>
-            <NavigationText>{name}</NavigationText>
-        </NavigationLi>
-    ));
-
-    return (
-        <WrappMPNavigation>
-                <NavigationUl>
-                    {mpNavigationItem }
-                </NavigationUl>
-        </WrappMPNavigation>
-    )
-}
-
-export default  MPNavigation

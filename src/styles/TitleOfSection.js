@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 const TitleOfSection = styled.h2`
   font-size: 35px;
   font-weight: 400;
@@ -9,7 +8,6 @@ const TitleOfSection = styled.h2`
   padding-top: 40px;
   width: 100%;
   margin: 0 0 40px 0;
-    `;
+    `
 
-export default TitleOfSection;
-
+export default TitleOfSection

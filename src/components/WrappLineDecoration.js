@@ -1,6 +1,5 @@
-import React from "react";
+import React from 'react'
 import styled from 'styled-components'
-
 
 const LineDecoration = styled.div`
   width: 60px;
@@ -24,13 +23,12 @@ const Line = styled.div`
 `
 
 const WrappLineDecoration = () => {
+  return (
+    <LineDecoration>
+      <Line />
+    </LineDecoration>
 
-    return (
-        <LineDecoration>
-            <Line/>
-        </LineDecoration>
-
-    )
+  )
 }
 
-export default WrappLineDecoration;
+export default WrappLineDecoration
