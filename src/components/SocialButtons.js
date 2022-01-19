@@ -20,6 +20,26 @@ const socialIconsArray = [
   }
 ]
 
+const SocialButtons = ({ colorPrimary }) => {
+  const socialIcon = socialIconsArray.map((item) => (
+    <WrappIcon key={item.id} href={item.path} colorPrimary={colorPrimary}>
+      {item.name}
+    </WrappIcon>
+
+  ))
+
+  return (
+    <WrappSocialButtons>
+      <Invitation>Znajdziesz mnie tu</Invitation>
+      <WrappIcons>
+        {socialIcon}
+      </WrappIcons>
+    </WrappSocialButtons>
+  )
+}
+
+export default SocialButtons
+
 const WrappSocialButtons = styled.div`
   //border: red 2px solid;
   display: flex;
@@ -59,24 +79,3 @@ const WrappIcon = styled.a`
   color:  ${props => props.colorPrimary ? props.theme.colors.colorPrimary : props.theme.colors.colorText};
   margin-right: 20px;
 `
-
-const SocialButtons = ({ colorPrimary }) => {
-  const socialIcon = socialIconsArray.map((item) => (
-    <WrappIcon key={item.id} href={item.path} colorPrimary={colorPrimary}>
-      {item.name}
-    </WrappIcon>
-
-  ))
-
-  return (
-    <WrappSocialButtons>
-      <Invitation>Znajdziesz mnie tu</Invitation>
-      <WrappIcons>
-        {socialIcon}
-      </WrappIcons>
-    </WrappSocialButtons>
-
-  )
-}
-
-export default SocialButtons

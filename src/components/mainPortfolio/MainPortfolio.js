@@ -80,11 +80,11 @@ const MainPortfolio = () => {
                                dataIsActiv={isActive}
               >
                   <WrappImgPF>
-                      <ImgPF src={item.photo} />
+                      <ImgPF src={item.photo} alt={item.name} dataIsActiv={isActive}/>
                   </WrappImgPF>
                   <WrappInfo>
-                      <MPText>{item.skills}</MPText>
-                     <TitleOfSection>{item.name}</TitleOfSection>
+                      <Skills>{item.skills}</Skills>
+                     <Title dataIsActiv={isActive} >{item.name}</Title>
                   </WrappInfo>
               </WrappOneProject>
           )
@@ -122,18 +122,23 @@ const WrappOneProject = styled.div`
   width: 100%;
   margin: 0 0 40px 0px;
   box-shadow: ${props => props.theme.shadows.shadowWhite};
-  bbackground: ${props => props.dataIsActiv ? props.theme.colors.colorPrimary : props.theme.gradients.gradientBox};order-radius: 5px;
+  background: ${props => props.theme.gradients.gradientBox};
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  //justify-content: flex-start;
+  //justify-self: stretch;
+  //align-items: self-start;
+  //align-self: center;
   padding: 40px;
-  align-self: center;
   border-radius: 10px;
   //border: 2px solid pink;
-  @media (min-width: 550px) {
+  transition: 0.3s;
+  @media (min-width: 500px) {
      width: 80%;
+  }
+  @media (min-width: 600px) {
+    width: 70%;
   }
   @media (min-width: 700px) {
     flex-direction: row;
@@ -151,37 +156,55 @@ const WrappOneProject = styled.div`
 
 const WrappImgPF = styled.div`
   width: 100%;
-  border: 2px solid red;
+  height: 300px;
+  //border: 2px solid red;
   border-radius: 10px;
-  //@media (min-width: 600px) {
-  //  width: 49%;
-  //    }
-  //@media (min-width: 900px) {
-  //  width: 100%;
-  //}
-  //@media (min-width: 1080px) {
-  //  width: 49%;
-  //}
+  align-self: stretch;
+  overflow: hidden;
   
-`
+  @media (min-width: 500px) {
+    height: 300px;
+  }
+  @media (min-width: 700px) {
+    height: 250px;
+  }
+  @media (min-width: 900px) {
+    height: 300px;
+  }
+      `
 
 const ImgPF = styled.img`
 border-radius: 10px;
 width: 100%;
 height: 100%;
-`
+transition: 0.3s;
+transform: ${props => props.dataIsActiv ? 'scale(1.1, 1.1)' : null};  
+//border: purple 2px solid;
+    `
 
 const WrappInfo = styled.div `
   width: 100%;
-  border: 2px solid green;
-  //@media (min-width: 600px) {
-  //  width: 49%;
-  //    }
-  //@media (min-width: 900px) {
-  //  width: 100%;
-  //}
-  //@media (min-width: 1080px) {
-  //  width: 49%;
-  //} 
+  //border: 2px solid green;
+  align-self: stretch;
+  padding: 10px 0 0 0 ;
+ `
+
+const Skills = styled.p`
+  color: ${props => props.theme.colors.colorPrimary};
+  font-size: ${props => props.theme.fontSizes.fsB3};
+  font-family: ${props => props.theme.fonts.fontPrimary};
+  text-align: center;
+  letter-spacing: 1px;
   
+    `
+
+const Title = styled.p`
+  text-decoration: none;
+  text-align: center;
+  color: ${props => props.dataIsActiv ? props.theme.colors.colorPrimary : props.theme.colors.colorText};
+  font-family: ${props => props.theme.fonts.fontSecondary};
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: ${props => props.theme.fontSizes.fsB1};
+  transition: 0.3s;
 `
