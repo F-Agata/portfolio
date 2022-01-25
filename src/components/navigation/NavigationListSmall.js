@@ -13,7 +13,7 @@ const iconFaXMark = <FontAwesomeIcon icon={faTimes} />
 const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
   const menuItem = menuItems.map((item) => (
     <NavigationLi key={item.id}>
-      <NavigationLink href={`#${item.id}`}>{item.name}</NavigationLink>
+      <NavigationLink href={`#${item.id}`} onClick={changeMenu} >{item.name}</NavigationLink>
     </NavigationLi>
   ))
 

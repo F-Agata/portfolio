@@ -3,10 +3,13 @@ import styled from 'styled-components'
 
 import HeaderPartPhoto from './HeaderPartPhoto'
 import HeaderPartText from './HeaderPartText'
+import DivToNavigation from "../DivToNavigation";
 
 const Header = () => {
   return (
-    <WrappHeader  id={"header"}>
+      <>
+     <DivToNavigation id={"header"}/>
+     <WrappHeader  >
       <WrappHeaderPartPhoto>
         <HeaderPartPhoto />
       </WrappHeaderPartPhoto>
@@ -14,6 +17,7 @@ const Header = () => {
         <HeaderPartText />
       </WrappHeaderPartText>
     </WrappHeader>
+      </>
   )
 }
 

@@ -5,6 +5,7 @@ import MPEducation from './MPEducation'
 import MPExperience from './MPexperience'
 import MPNavigation from './MPNavigation'
 import MPSkills from './MPSkills'
+import DivToNavigation from "../DivToNavigation";
 
 const mpNavigationArray = [
   {
@@ -25,12 +26,15 @@ const MainPage = () => {
   const [activeTab, setActiveTab] = useState('edukacja')
 
   return (
-    <WrappMainPage id={"mainPage"}>
+      <>
+        <DivToNavigation id={"mainPage"}/>
+    <WrappMainPage >
       <MPNavigation setActiveTab={setActiveTab} mpNavigationArray={mpNavigationArray} activeTab={activeTab} />
       {activeTab === 'edukacja' && <MPEducation />}
       {activeTab === 'doświadczenie zawodowe' && <MPExperience />}
       {activeTab === 'umiejętności' && <MPSkills />}
     </WrappMainPage>
+        </>
   )
 }
 

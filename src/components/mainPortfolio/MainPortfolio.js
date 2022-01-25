@@ -6,6 +6,7 @@ import TitleOfSection from "../../styles/TitleOfSection";
 import form from "../../pictures/form.png"
 import memory from "../../pictures/memory.png"
 import quiz from "../../pictures/quiz.png"
+import DivToNavigation from "../DivToNavigation";
 
 const portfolioArray = [
   {
@@ -92,19 +93,22 @@ const MainPortfolio = () => {
     // useEffect(()=>{console.log('dataIsActive', dataIsActive)},[dataIsActive])
 
   return (
-    <WrappMainPortfolio id={"mainPortfolio"}>
+      <>
+          <DivToNavigation  id={"mainPortfolio"}/>
+    <WrappMainPortfolio>
         <TitleOfSection>
             Portfolio
         </TitleOfSection>
        {oneProject}
     </WrappMainPortfolio>
+          </>
   )
 };
 
 export default MainPortfolio
 
 const WrappMainPortfolio = styled.section`
-  margin: 40px 40px 0 40px;
+  margin: 0px 40px 0 40px;
   padding-bottom: 40px;
   min-width: 375px;
   max-width: 1440px;
