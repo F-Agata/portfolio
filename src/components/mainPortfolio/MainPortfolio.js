@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
-import MPText from "../../styles/MPText";
 import TitleOfSection from "../../styles/TitleOfSection";
 
 import form from "../../pictures/form.png"
@@ -93,8 +92,11 @@ const MainPortfolio = () => {
     // useEffect(()=>{console.log('dataIsActive', dataIsActive)},[dataIsActive])
 
   return (
-    <WrappMainPortfolio>
-      {oneProject}
+    <WrappMainPortfolio id={"mainPortfolio"}>
+        <TitleOfSection>
+            Portfolio
+        </TitleOfSection>
+       {oneProject}
     </WrappMainPortfolio>
   )
 };
@@ -134,7 +136,7 @@ const WrappOneProject = styled.div`
   border-radius: 10px;
   //border: 2px solid pink;
   transition: 0.3s;
-  @media (min-width: 500px) {
+    @media (min-width: 500px) {
      width: 80%;
   }
   @media (min-width: 600px) {
@@ -161,7 +163,7 @@ const WrappImgPF = styled.div`
   border-radius: 10px;
   align-self: stretch;
   overflow: hidden;
-  
+  //padding: 0 20px;
   @media (min-width: 500px) {
     height: 300px;
   }
@@ -170,6 +172,7 @@ const WrappImgPF = styled.div`
   }
   @media (min-width: 900px) {
     height: 300px;
+    padding: 0 20px;
   }
       `
 

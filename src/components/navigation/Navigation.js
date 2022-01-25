@@ -14,20 +14,20 @@ const iconFaBars = <FontAwesomeIcon icon={faBars} />
 
 const menuItems = [
   {
-    name: 'Hello',
-    id: 'menu1'
+    name: 'o mnie',
+    id: 'header'
   },
   {
-    name: 'O mnie',
-    id: 'menu2'
+    name: 'rozwój',
+    id: 'mainPage'
   },
   {
-    name: 'Projekty',
-    id: 'menu3'
+    name: 'Portfolio',
+    id: 'mainPortfolio'
   },
   {
     name: 'Kontakt',
-    id: 'menu4'
+    id: 'footer'
   }]
 
 const Navigation = () => {

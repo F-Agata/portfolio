@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const NavigationMainListBig = ({ menuItems }) => {
   const menuItem = menuItems.map((item) => (
     <NavigationLi key={item.id}>
-      <NavigationLink href='#'>{item.name}</NavigationLink>
+      <NavigationLink href={`#${item.id}`}>{item.name}</NavigationLink>
     </NavigationLi>
   ))
 

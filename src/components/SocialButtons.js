@@ -64,6 +64,8 @@ const WrappIcons = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  transition: 0.3s;
+  cursor: pointer; 
 `
 
 const WrappIcon = styled.a`
@@ -78,4 +80,9 @@ const WrappIcon = styled.a`
   font-size: ${props => props.theme.fontSizes.fsB2};
   color:  ${props => props.colorPrimary ? props.theme.colors.colorPrimary : props.theme.colors.colorText};
   margin-right: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+  :hover {
+    color:  ${props => props.colorPrimary ? props.theme.colors.colorText : props.theme.colors.colorPrimary};    
+  }
 `

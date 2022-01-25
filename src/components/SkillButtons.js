@@ -61,6 +61,11 @@ const WrappIcon = styled.a`
   font-size: ${props => props.theme.fontSizes.fsB2};
   color:   ${props => props.theme.colors.colorText};
   margin-right: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  :hover {
+    color:  ${props => props.theme.colors.colorPrimary};
+  }
 `
 
 const SkillButtons = () => {

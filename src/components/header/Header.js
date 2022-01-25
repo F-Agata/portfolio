@@ -6,7 +6,7 @@ import HeaderPartText from './HeaderPartText'
 
 const Header = () => {
   return (
-    <WrappHeader>
+    <WrappHeader  id={"header"}>
       <WrappHeaderPartPhoto>
         <HeaderPartPhoto />
       </WrappHeaderPartPhoto>

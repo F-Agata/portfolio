@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import MPEducation from './MPEducation'
@@ -25,7 +25,7 @@ const MainPage = () => {
   const [activeTab, setActiveTab] = useState('edukacja')
 
   return (
-    <WrappMainPage>
+    <WrappMainPage id={"mainPage"}>
       <MPNavigation setActiveTab={setActiveTab} mpNavigationArray={mpNavigationArray} activeTab={activeTab} />
       {activeTab === 'edukacja' && <MPEducation />}
       {activeTab === 'doświadczenie zawodowe' && <MPExperience />}

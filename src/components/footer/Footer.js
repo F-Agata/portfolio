@@ -7,7 +7,7 @@ import logo from '../../pictures/logo.svg'
 
 const Footer = () => {
   return (
-    <WrappFooter>
+    <WrappFooter id={"footer"}>
       <WrappLogo>
         <Logo src={logo} alt='logo' />
       </WrappLogo>
