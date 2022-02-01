@@ -20,9 +20,9 @@ const socialIconsArray = [
   }
 ]
 
-const SocialButtons = ({ colorPrimary }) => {
+const SocialButtons = ({ colorPrimary, footerAlignCenter  }) => {
   const socialIcon = socialIconsArray.map((item) => (
-    <WrappIcon key={item.id} href={item.path} colorPrimary={colorPrimary}>
+    <WrappIcon key={item.id} href={item.path} colorPrimary={colorPrimary} >
       {item.name}
     </WrappIcon>
 
@@ -30,8 +30,8 @@ const SocialButtons = ({ colorPrimary }) => {
 
   return (
     <WrappSocialButtons>
-      <Invitation>Znajdziesz mnie tu</Invitation>
-      <WrappIcons>
+      <Invitation footerAlignCenter={footerAlignCenter}>Znajdziesz mnie tu</Invitation>
+      <WrappIcons footerAlignCenter={footerAlignCenter}>
         {socialIcon}
       </WrappIcons>
     </WrappSocialButtons>
@@ -54,17 +54,18 @@ const Invitation = styled.p`
   font-size: ${props => props.theme.fontSizes.fsB3};
   font-family: ${props => props.theme.fonts.fontPrimary};
   text-transform: uppercase;
-  text-align: center;
   letter-spacing: 2px;
   margin-bottom: 20px;
   font-weight: 700;
-`
+  text-align: ${props => props.footerAlignCenter ? 'center' : 'left'};
+    `
 
 const WrappIcons = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  transition: 0.3s;
+  justify-content: ${props => props.footerAlignCenter ? 'center' : 'flex-start'};
+  //justify-content: ${({ footerAlignCenter }) => ( footerAlignCenter ? 'center' : 'flex-start' )};
+  transition: 0.3s;  
   cursor: pointer; 
 `
 

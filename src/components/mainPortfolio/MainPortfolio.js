@@ -108,7 +108,7 @@ const MainPortfolio = () => {
 export default MainPortfolio
 
 const WrappMainPortfolio = styled.section`
-  margin: 0px 40px 0 40px;
+  margin:   0px 40px 0 40px;
   padding-bottom: 40px;
   min-width: 375px;
   max-width: 1440px;

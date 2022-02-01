@@ -6,6 +6,41 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 const iconFaArrowUp = <FontAwesomeIcon icon={faArrowUp} />
 
+const GoToTopOfPage = () => {
+  const [scrollY, setScrollY] = useState(0)
+  const [showArrow, setShowArrow] = useState(false)
+
+  const scrollTop = () => { window.scrollTo({ top: 0, behavior: 'smooth' }) }
+
+  const toggleArrow = () => {
+    setScrollY(window.pageYOffset)
+    if (scrollY > 120) {
+      setShowArrow(true)
+    } else setShowArrow(false)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', toggleArrow)
+    return () => window.removeEventListener('scroll', toggleArrow)
+  }, [scrollY, showArrow])
+
+  return (
+    <>
+      {showArrow
+        ? <WrappGoToTopOfPage onClick={scrollTop}>
+          <BackgraundButtonArrow />
+          <WrappArrow>
+            {iconFaArrowUp}
+          </WrappArrow>
+
+        </WrappGoToTopOfPage>
+        : null}
+    </>
+  )
+}
+
+export default GoToTopOfPage
+
 const WrappGoToTopOfPage = styled.div`
   width: 50px;
   height: 50px;
@@ -50,38 +85,3 @@ const WrappArrow = styled.div`
   transform: translate(-50%, -50%);
   z-index: 12;
 `
-
-const GoToTopOfPage = () => {
-  const [scrollY, setScrollY] = useState(0)
-  const [showArrow, setShowArrow] = useState(false)
-
-  const scrollTop = () => { window.scrollTo({ top: 0, behavior: 'smooth' }) }
-
-  const toggleArrow = () => {
-    setScrollY(window.pageYOffset)
-    if (scrollY > 120) {
-      setShowArrow(true)
-    } else setShowArrow(false)
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', toggleArrow)
-    return () => window.removeEventListener('scroll', toggleArrow)
-  }, [scrollY, showArrow])
-
-  return (
-    <>
-      {showArrow
-        ? <WrappGoToTopOfPage onClick={scrollTop}>
-          <BackgraundButtonArrow />
-          <WrappArrow>
-            {iconFaArrowUp}
-          </WrappArrow>
-
-        </WrappGoToTopOfPage>
-        : null}
-    </>
-  )
-}
-
-export default GoToTopOfPage

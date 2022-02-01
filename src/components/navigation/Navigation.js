@@ -74,7 +74,9 @@ const Navigation = () => {
     <WrappNavigationShadow>
       <WrappNavigation>
         <WrappLogo>
-          <Logo src={logo} alt='logo' />
+          <WrappLogoLink href={`#header`}>
+               <Logo src={logo} alt='logo' />
+          </WrappLogoLink>
         </WrappLogo>
         {modificationMenuSize
           ? null
@@ -131,6 +133,13 @@ const WrappLogo = styled.div`
     margin-left: 0px;
   }
   `
+
+const WrappLogoLink = styled.a`
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+`
 
 const Logo = styled.img`
   height: 100%;`

@@ -20,6 +20,26 @@ const skillIconsArray = [
   }
 ]
 
+const SkillButtons = () => {
+  const skillIcon = skillIconsArray.map((item) => (
+    <WrappIcon key={item.id} href={item.path}>
+      {item.name}
+    </WrappIcon>
+  ))
+
+  return (
+    <WrappSkillButtons>
+      <Invitation>Mój stack</Invitation>
+      <WrappIcons>
+        {skillIcon}
+      </WrappIcons>
+    </WrappSkillButtons>
+
+  )
+}
+
+export default SkillButtons
+
 const WrappSkillButtons = styled.div`
     display: flex;
   flex-wrap: wrap;
@@ -67,23 +87,3 @@ const WrappIcon = styled.a`
     color:  ${props => props.theme.colors.colorPrimary};
   }
 `
-
-const SkillButtons = () => {
-  const skillIcon = skillIconsArray.map((item) => (
-    <WrappIcon key={item.id} href={item.path}>
-      {item.name}
-    </WrappIcon>
-  ))
-
-  return (
-    <WrappSkillButtons>
-      <Invitation>Mój stack</Invitation>
-      <WrappIcons>
-        {skillIcon}
-      </WrappIcons>
-    </WrappSkillButtons>
-
-  )
-}
-
-export default SkillButtons

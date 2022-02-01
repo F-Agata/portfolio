@@ -21,8 +21,10 @@ const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
     <NavigationWrapp>
       <NavigationListWrapp>
         <TopMenu>
-          <WrappLogo>
-            <Logo src={logo} alt='logo' />
+          <WrappLogo onClick={changeMenu}>
+            <WrappLogoLink href={`#header`}>
+              <Logo src={logo} alt='logo' />
+            </WrappLogoLink>
           </WrappLogo>
           <WrapIcon>
             <ToggleMenuButton onClick={changeMenu}>
@@ -78,6 +80,13 @@ const TopMenu = styled.div`
 const WrappLogo = styled.div`
   height: 45px;
   text-align: left; 
+`
+
+const WrappLogoLink = styled.a`
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
 `
 
 const Logo = styled.img`

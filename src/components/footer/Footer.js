@@ -4,19 +4,25 @@ import styled from 'styled-components'
 import SocialButtons from '../SocialButtons'
 
 import logo from '../../pictures/logo.svg'
+import DivToNavigation from "../DivToNavigation";
 
 const Footer = () => {
   return (
-    <WrappFooter id={"footer"}>
+      <>
+          <DivToNavigation id={"footer"}/>
+    <WrappFooter >
       <WrappLogo>
-        <Logo src={logo} alt='logo' />
+        <WrappLogoLink href={`#header`}>
+          <Logo src={logo} alt='logo' />
+        </WrappLogoLink>
       </WrappLogo>
-      <SocialButtons />
+      <SocialButtons footerAlignCenter/>
       <WrappContact>
         <ContactPhone>609 594 597</ContactPhone>
         <ContactMail>hello@agataf.pl</ContactMail>
       </WrappContact>
     </WrappFooter>
+          </>
   )
 }
 
@@ -51,15 +57,23 @@ const WrappLogo = styled.div`
   }
   `
 
+const WrappLogoLink = styled.a`
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: pointer;
+`
+
 const Logo = styled.img`
   height: 100%;
 `
 
 const WrappContact = styled.div`
   margin-top: 30px;
-  text-align: right;
+  text-align: center;
   @media (min-width: 992px) {
     margin-top: 0px;
+    text-align: right;
   }
 `
 const ContactPhone = styled.p`
@@ -67,3 +81,4 @@ const ContactPhone = styled.p`
 
 const ContactMail = styled.p`
 `
+
