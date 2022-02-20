@@ -10,7 +10,7 @@ import logo from '../../pictures/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-const iconFaBars = <FontAwesomeIcon icon={faBars} />
+const iconFaBars = <FontAwesomeIcon icon={faBars}/>
 
 const menuItems = [
   {
@@ -64,18 +64,12 @@ const Navigation = () => {
     resetMenu()
   }, [modificationMenuSize])
 
-  const WrappNavigationShadow = styled(NavigationBasicStyle)`
-      ${({ theme }) => `
-        background: ${addShadow ? theme.colors.colorGray : 'transparent'};
-        box-shadow: ${addShadow ? theme.shadows.shadowWhite : 'none'};
-      `};
-    `
   return (
-    <WrappNavigationShadow>
+    <WrappNavigationShadow addShadow={addShadow}>
       <WrappNavigation>
         <WrappLogo>
           <WrappLogoLink href={`#header`}>
-               <Logo src={logo} alt='logo' />
+            <Logo src={logo} alt="logo"/>
           </WrappLogoLink>
         </WrappLogo>
         {modificationMenuSize
@@ -84,12 +78,12 @@ const Navigation = () => {
             <ToggleMenuButton onClick={changeMenu}>
               {iconFaBars}
             </ToggleMenuButton>
-            </WrapIcon>}
+          </WrapIcon>}
         {isOpen && !modificationMenuSize
-          ? <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} />
+          ? <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu}/>
           : null}
         {modificationMenuSize &&
-          <NavigationListBig menuItems={menuItems} />}
+        <NavigationListBig menuItems={menuItems}/>}
       </WrappNavigation>
     </WrappNavigationShadow>
   )
@@ -107,6 +101,14 @@ const NavigationBasicStyle = styled.aside`
   justify-content: center;
   z-index: 10;
 `
+
+const WrappNavigationShadow = styled(NavigationBasicStyle)`
+  ${({ theme, addShadow }) => `
+    background: ${addShadow ? theme.colors.colorGray : 'transparent'};
+    box-shadow: ${addShadow ? theme.shadows.shadowWhite : 'none'};
+  `};
+`
+
 const WrappNavigation = styled.div`
   height: 90px;
   align-self: center;
