@@ -4,22 +4,22 @@ import { useSpring, animated } from 'react-spring'
 
 import agata from '../../pictures/agata.png'
 
-const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
-const trans = (x, y, z) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${z})`
+const calc = (x, y) => [-(y - window.innerHeight / 2.6) / 20, (x - window.innerWidth / 1.4) / 20, 1.05]
+const trans = (x, y, z) => `perspective(1200px) rotateX(${x}deg) rotateY(${y}deg) scale(${z})`
 
 const HeaderPartPhoto = () => {
 
-     const [spring, setSpring] = useSpring(()=>({ xyz: [0, 0, 1], config: {mass: 10, tension: 200, friction:50}}))
+  const [spring, setSpring] = useSpring(() => ({ xyz: [0, 0, 1], config: { mass: 10, tension: 200, friction: 50 } }))
 
   return (
     <WrappBigPhoto
-        onMouseMove={({ clientX: x, clientY: y}) => (setSpring({ xyz: calc(x, y)}))}
-        onMouseLeave={() => setSpring({ xyz: [0, 0, 1]})}
-        style={ {transform: spring.xyz.interpolate(trans)}}
+      onMouseMove={({ clientX: x, clientY: y }) => (setSpring({ xyz: calc(x, y) }))}
+      onMouseLeave={() => setSpring({ xyz: [0, 0, 1] })}
+      style={{ transform: spring.xyz.interpolate(trans) }}
     >
-      <ShadowDiv />
+      <ShadowDiv/>
       <WrappSmallPhoto>
-        <PhotoMy src={agata} alt={"I'm"} />
+        <PhotoMy src={agata} alt={'I\'m'}/>
       </WrappSmallPhoto>
     </WrappBigPhoto>
   )
@@ -32,7 +32,7 @@ const WrappBigPhoto = styled(animated.div)`
   position: relative;
   //border: yellowgreen 2px solid;
   cursor: pointer;
-  `
+`
 
 const WrappSmallPhoto = styled.div`
   max-width: 900px;
@@ -47,7 +47,7 @@ const WrappSmallPhoto = styled.div`
 `
 const PhotoMy = styled.img`
   width: 100%;
-  `
+`
 
 const ShadowDiv = styled.div`
   //border: yellow 2px solid;
@@ -61,4 +61,4 @@ const ShadowDiv = styled.div`
   box-shadow: ${props => props.theme.shadows.shadowWhite};
   background: ${props => props.theme.gradients.gradientBox};
   border-radius: 5px;
-  `
+`
