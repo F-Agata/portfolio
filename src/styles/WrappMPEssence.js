@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const WrappMPEssence = styled.div`
   width: 100%;
@@ -11,6 +11,6 @@ const WrappMPEssence = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-`
+`;
 
-export default WrappMPEssence
+export default WrappMPEssence;

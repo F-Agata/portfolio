@@ -1,36 +1,36 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import SocialButtons from '../SocialButtons'
+import SocialButtons from '../SocialButtons';
 
-import logo from '../../pictures/logo.svg'
-import DivToNavigation from "../DivToNavigation";
+import logo from '../../pictures/logo.svg';
+import DivToNavigation from '../DivToNavigation';
 
 const Footer = () => {
-  return (
-      <>
-          <DivToNavigation id={"footer"}/>
-    <WrappFooter >
-      <WrappLogo>
-        <WrappLogoLink href={`#header`}>
-          <Logo src={logo} alt='logo' />
-        </WrappLogoLink>
-      </WrappLogo>
-      <SocialButtons footerAlignCenter/>
-      <WrappContact>
-        <ContactPhone>609 594 597</ContactPhone>
-        <ContactMail>hello@agataf.pl</ContactMail>
-      </WrappContact>
-    </WrappFooter>
-          </>
-  )
-}
+	return (
+		<>
+			<DivToNavigation id={'footer'} />
+			<WrappFooter>
+				<WrappLogo>
+					<WrappLogoLink href={'#header'}>
+						<Logo src={logo} alt="logo" />
+					</WrappLogoLink>
+				</WrappLogo>
+				<SocialButtons footerAlignCenter />
+				<WrappContact>
+					<ContactPhone>609 594 597</ContactPhone>
+					<ContactMail>hello@agataf.pl</ContactMail>
+				</WrappContact>
+			</WrappFooter>
+		</>
+	);
+};
 
-export default Footer
+export default Footer;
 
 const WrappFooter = styled.footer`
-  margin:  0 40px;
-  padding: 40px ;
+  margin: 0 40px;
+  padding: 40px;
   min-width: 375px;
   max-width: 1440px;
   //border: green solid 2px;
@@ -39,12 +39,13 @@ const WrappFooter = styled.footer`
   align-items: center;
   justify-content: space-between;
   //border-radius: 10px;
-  // box-shadow: ${props => props.theme.shadows.shadowWhite};
-  // background: ${props => props.theme.gradients.gradientBox};
+  // box-shadow: ${(props) => props.theme.shadows.shadowWhite};
+  // background: ${(props) => props.theme.gradients.gradientBox};
   @media (min-width: 992px) {
     flex-direction: row;
     align-items: flex-start;
-  }`
+  }
+`;
 
 const WrappLogo = styled.div`
   height: 60px;
@@ -55,18 +56,18 @@ const WrappLogo = styled.div`
   img {
     height: 28px;
   }
-  `
+`;
 
 const WrappLogoLink = styled.a`
   width: 100%;
   height: 100%;
   display: block;
   cursor: pointer;
-`
+`;
 
 const Logo = styled.img`
   height: 100%;
-`
+`;
 
 const WrappContact = styled.div`
   margin-top: 30px;
@@ -75,10 +76,7 @@ const WrappContact = styled.div`
     margin-top: 0px;
     text-align: right;
   }
-`
-const ContactPhone = styled.p`
-`
+`;
+const ContactPhone = styled.p``;
 
-const ContactMail = styled.p`
-`
-
+const ContactMail = styled.p``;

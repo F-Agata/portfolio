@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const WrappMPOneItem = styled.div`
-  margin: 0 0 40px 0px ;
-  box-shadow: ${props => props.theme.shadows.shadowWhite};
-  background: ${props => props.theme.gradients.gradientBox};
+  margin: 0 0 40px 0px;
+  box-shadow: ${(props) => props.theme.shadows.shadowWhite};
+  background: ${(props) => props.theme.gradients.gradientBox};
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -12,10 +12,10 @@ const WrappMPOneItem = styled.div`
   //border: 2px solid red;
   align-self: stretch;
   position: relative;
-   @media (min-width: 1080px) {
-    margin-left: ${props => props.presentTime ? '0px' : '40px'};
-    width: ${props => props.presentTime ? '100%' : '45%'};
-     }
-`
+  @media (min-width: 1080px) {
+    margin-left: ${(props) => (props.presentTime ? '0px' : '40px')};
+    width: ${(props) => (props.presentTime ? '100%' : '45%')};
+  }
+`;
 
-export default WrappMPOneItem
+export default WrappMPOneItem;

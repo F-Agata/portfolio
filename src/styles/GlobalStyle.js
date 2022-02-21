@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Poppins:wght@300;400;700&display=swap');
@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
       }
   
       body {
-        background: ${props => props.theme.gradients.gradientBox};
+        background: ${(props) => props.theme.gradients.gradientBox};
       }
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;
