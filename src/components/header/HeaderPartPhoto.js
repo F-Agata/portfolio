@@ -4,16 +4,21 @@ import { useSpring, animated } from 'react-spring'
 
 import agata from '../../pictures/agata.png'
 
-const calc = (x, y) => [-(y - window.innerHeight / 2.6) / 20, (x - window.innerWidth / 1.4) / 20, 1.05]
+const calc = (x, y) => [-(y - 320) / 20, (x - 270) /20, 1.05]
 const trans = (x, y, z) => `perspective(1200px) rotateX(${x}deg) rotateY(${y}deg) scale(${z})`
 
 const HeaderPartPhoto = () => {
 
   const [spring, setSpring] = useSpring(() => ({ xyz: [0, 0, 1], config: { mass: 10, tension: 200, friction: 50 } }))
 
+  const handleMouseMove = (event) => {
+    const {nativeEvent: { offsetX: ox, offsetY: oy}} = event;
+    setSpring({ xyz: calc(ox, oy) })
+  }
+
   return (
     <WrappBigPhoto
-      onMouseMove={({ clientX: x, clientY: y }) => (setSpring({ xyz: calc(x, y) }))}
+      onMouseMove={(event) => handleMouseMove(event)}
       onMouseLeave={() => setSpring({ xyz: [0, 0, 1] })}
       style={{ transform: spring.xyz.interpolate(trans) }}
     >
