@@ -13,80 +13,80 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 const iconFaBars = <FontAwesomeIcon icon={faBars} />;
 
 const menuItems = [
-	{
-		name: 'o mnie',
-		id: 'header',
-	},
-	{
-		name: 'rozwój',
-		id: 'mainPage',
-	},
-	{
-		name: 'Portfolio',
-		id: 'mainPortfolio',
-	},
-	{
-		name: 'Kontakt',
-		id: 'footer',
-	},
+  {
+    name: 'o mnie',
+    id: 'header',
+  },
+  {
+    name: 'rozwój',
+    id: 'mainPage',
+  },
+  {
+    name: 'Portfolio',
+    id: 'mainPortfolio',
+  },
+  {
+    name: 'Kontakt',
+    id: 'footer',
+  },
 ];
 
 const Navigation = () => {
-	const [isOpen, setIsOpen] = useState(false);
-	const [iconMenu, setIconMenu] = useState(false);
-	const [scrollY, setScrollY] = useState(0);
-	const [addShadow, setAddShadow] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [iconMenu, setIconMenu] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [addShadow, setAddShadow] = useState(false);
 
-	const modificationMenuSize = useMediaQuery({ query: '(min-width: 992px)' });
+  const modificationMenuSize = useMediaQuery({ query: '(min-width: 992px)' });
 
-	const changeMenu = () => {
-		setIsOpen(!isOpen);
-		setIconMenu(!iconMenu);
-	};
+  const changeMenu = () => {
+    setIsOpen(!isOpen);
+    setIconMenu(!iconMenu);
+  };
 
-	const resetMenu = () => {
-		setIsOpen(false);
-		setIconMenu(false);
-	};
+  const resetMenu = () => {
+    setIsOpen(false);
+    setIconMenu(false);
+  };
 
-	const moveScroll = () => {
-		setScrollY(window.pageYOffset);
-		if (scrollY > 120) {
-			setAddShadow(true);
-		} else setAddShadow(false);
-	};
+  const moveScroll = () => {
+    setScrollY(window.pageYOffset);
+    if (scrollY > 120) {
+      setAddShadow(true);
+    } else setAddShadow(false);
+  };
 
-	useEffect(() => {
-		window.addEventListener('scroll', moveScroll);
-		return () => window.removeEventListener('scroll', moveScroll);
-	}, [scrollY, addShadow]);
+  useEffect(() => {
+    window.addEventListener('scroll', moveScroll);
+    return () => window.removeEventListener('scroll', moveScroll);
+  }, [scrollY, addShadow]);
 
-	useEffect(() => {
-		resetMenu();
-	}, [modificationMenuSize]);
+  useEffect(() => {
+    resetMenu();
+  }, [modificationMenuSize]);
 
-	return (
-		<WrappNavigationShadow addShadow={addShadow}>
-			<WrappNavigation>
-				<WrappLogo>
-					<WrappLogoLink href={'#header'}>
-						<Logo src={logo} alt="logo" />
-					</WrappLogoLink>
-				</WrappLogo>
-				{modificationMenuSize ? null : (
-					<WrapIcon>
-						<ToggleMenuButton onClick={changeMenu}>
-							{iconFaBars}
-						</ToggleMenuButton>
-					</WrapIcon>
-				)}
-				{isOpen && !modificationMenuSize ? (
-					<NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} />
-				) : null}
-				{modificationMenuSize && <NavigationListBig menuItems={menuItems} />}
-			</WrappNavigation>
-		</WrappNavigationShadow>
-	);
+  return (
+    <WrappNavigationShadow addShadow={addShadow}>
+      <WrappNavigation>
+        <WrappLogo>
+          <WrappLogoLink href={'#header'}>
+            <Logo src={logo} alt="logo" />
+          </WrappLogoLink>
+        </WrappLogo>
+        {modificationMenuSize ? null : (
+          <WrapIcon>
+            <ToggleMenuButton onClick={changeMenu}>
+              {iconFaBars}
+            </ToggleMenuButton>
+          </WrapIcon>
+        )}
+        {isOpen && !modificationMenuSize ? (
+          <NavigationListSmall menuItems={menuItems} changeMenu={changeMenu} />
+        ) : null}
+        {modificationMenuSize && <NavigationListBig menuItems={menuItems} />}
+      </WrappNavigation>
+    </WrappNavigationShadow>
+  );
 };
 
 export default Navigation;

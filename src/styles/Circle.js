@@ -6,9 +6,9 @@ const Circle = styled.div`
   border: 4px solid ${(props) => props.theme.colors.colorGrayLighter};
   border-radius: 50%;
   background-color: ${(props) =>
-		props.isActive
-			? props.theme.colors.colorPrimary
-			: props.theme.colors.colorGray};
+    props.isActive
+      ? props.theme.colors.colorPrimary
+      : props.theme.colors.colorGray};
   position: absolute;
   left: -66px;
   @media (min-width: 1080px) {

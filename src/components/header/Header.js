@@ -6,19 +6,19 @@ import HeaderPartText from './HeaderPartText';
 import DivToNavigation from '../DivToNavigation';
 
 const Header = () => {
-	return (
-		<>
-			<DivToNavigation id={'header'} />
-			<WrappHeader>
-				<WrappHeaderPartPhoto>
-					<HeaderPartPhoto />
-				</WrappHeaderPartPhoto>
-				<WrappHeaderPartText>
-					<HeaderPartText />
-				</WrappHeaderPartText>
-			</WrappHeader>
-		</>
-	);
+  return (
+    <>
+      <DivToNavigation id={'header'} />
+      <WrappHeader>
+        <WrappHeaderPartPhoto>
+          <HeaderPartPhoto />
+        </WrappHeaderPartPhoto>
+        <WrappHeaderPartText>
+          <HeaderPartText />
+        </WrappHeaderPartText>
+      </WrappHeader>
+    </>
+  );
 };
 
 export default Header;

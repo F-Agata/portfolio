@@ -8,35 +8,35 @@ const iconGithub = <FontAwesomeIcon icon={faGithub} />;
 const iconLinkedin = <FontAwesomeIcon icon={faLinkedin} />;
 
 const socialIconsArray = [
-	{
-		name: iconGithub,
-		id: 'iconGithub',
-		path: 'https://github.com/F-Agata',
-	},
-	{
-		name: iconLinkedin,
-		id: 'iconLinkedin',
-		path: 'https://linkedin.com',
-	},
+  {
+    name: iconGithub,
+    id: 'iconGithub',
+    path: 'https://github.com/F-Agata',
+  },
+  {
+    name: iconLinkedin,
+    id: 'iconLinkedin',
+    path: 'https://linkedin.com',
+  },
 ];
 
 const SocialButtons = ({ colorPrimary, footerAlignCenter }) => {
-	const socialIcon = socialIconsArray.map((item) => (
-		<WrappIcon key={item.id} href={item.path} colorPrimary={colorPrimary}>
-			{item.name}
-		</WrappIcon>
-	));
+  const socialIcon = socialIconsArray.map((item) => (
+    <WrappIcon key={item.id} href={item.path} colorPrimary={colorPrimary}>
+      {item.name}
+    </WrappIcon>
+  ));
 
-	return (
-		<WrappSocialButtons>
-			<Invitation footerAlignCenter={footerAlignCenter}>
+  return (
+    <WrappSocialButtons>
+      <Invitation footerAlignCenter={footerAlignCenter}>
         Znajdziesz mnie tu
-			</Invitation>
-			<WrappIcons footerAlignCenter={footerAlignCenter}>
-				{socialIcon}
-			</WrappIcons>
-		</WrappSocialButtons>
-	);
+      </Invitation>
+      <WrappIcons footerAlignCenter={footerAlignCenter}>
+        {socialIcon}
+      </WrappIcons>
+    </WrappSocialButtons>
+  );
 };
 
 export default SocialButtons;
@@ -65,9 +65,9 @@ const WrappIcons = styled.div`
   width: 100%;
   display: flex;
   justify-content: ${(props) =>
-		props.footerAlignCenter ? 'center' : 'flex-start'};
+    props.footerAlignCenter ? 'center' : 'flex-start'};
   //justify-content: ${({ footerAlignCenter }) =>
-		footerAlignCenter ? 'center' : 'flex-start'};
+    footerAlignCenter ? 'center' : 'flex-start'};
   transition: 0.3s;
   cursor: pointer;
 `;
@@ -83,16 +83,16 @@ const WrappIcon = styled.a`
   align-items: center;
   font-size: ${(props) => props.theme.fontSizes.fsB2};
   color: ${(props) =>
-		props.colorPrimary
-			? props.theme.colors.colorPrimary
-			: props.theme.colors.colorText};
+    props.colorPrimary
+      ? props.theme.colors.colorPrimary
+      : props.theme.colors.colorText};
   margin-right: 20px;
   transition: 0.3s;
   cursor: pointer;
   :hover {
     color: ${(props) =>
-		props.colorPrimary
-			? props.theme.colors.colorText
-			: props.theme.colors.colorPrimary};
+      props.colorPrimary
+        ? props.theme.colors.colorText
+        : props.theme.colors.colorPrimary};
   }
 `;

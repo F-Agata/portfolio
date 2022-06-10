@@ -7,23 +7,23 @@ import logo from '../../pictures/logo.svg';
 import DivToNavigation from '../DivToNavigation';
 
 const Footer = () => {
-	return (
-		<>
-			<DivToNavigation id={'footer'} />
-			<WrappFooter>
-				<WrappLogo>
-					<WrappLogoLink href={'#header'}>
-						<Logo src={logo} alt="logo" />
-					</WrappLogoLink>
-				</WrappLogo>
-				<SocialButtons footerAlignCenter />
-				<WrappContact>
-					<ContactPhone>609 594 597</ContactPhone>
-					<ContactMail>hello@agataf.pl</ContactMail>
-				</WrappContact>
-			</WrappFooter>
-		</>
-	);
+  return (
+    <>
+      <DivToNavigation id={'footer'} />
+      <WrappFooter>
+        <WrappLogo>
+          <WrappLogoLink href={'#header'}>
+            <Logo src={logo} alt="logo" />
+          </WrappLogoLink>
+        </WrappLogo>
+        <SocialButtons footerAlignCenter />
+        <WrappContact>
+          <ContactPhone>609 594 597</ContactPhone>
+          <ContactMail>hello@agataf.pl</ContactMail>
+        </WrappContact>
+      </WrappFooter>
+    </>
+  );
 };
 
 export default Footer;

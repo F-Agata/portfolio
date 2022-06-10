@@ -11,38 +11,38 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 const iconFaXMark = <FontAwesomeIcon icon={faTimes} />;
 
 const NavigationMainListSmall = ({ menuItems, changeMenu }) => {
-	const menuItem = menuItems.map((item) => (
-		<NavigationLi key={item.id}>
-			<NavigationLink href={`#${item.id}`} onClick={changeMenu}>
-				{item.name}
-			</NavigationLink>
-		</NavigationLi>
-	));
+  const menuItem = menuItems.map((item) => (
+    <NavigationLi key={item.id}>
+      <NavigationLink href={`#${item.id}`} onClick={changeMenu}>
+        {item.name}
+      </NavigationLink>
+    </NavigationLi>
+  ));
 
-	return (
-		<NavigationWrapp>
-			<NavigationListWrapp>
-				<TopMenu>
-					<WrappLogo onClick={changeMenu}>
-						<WrappLogoLink href={'#header'}>
-							<Logo src={logo} alt="logo" />
-						</WrappLogoLink>
-					</WrappLogo>
-					<WrapIcon>
-						<ToggleMenuButton onClick={changeMenu}>
-							{iconFaXMark}
-						</ToggleMenuButton>
-					</WrapIcon>
-				</TopMenu>
-				<NavigationNav>
-					<NavigationUl>{menuItem}</NavigationUl>
-				</NavigationNav>
-				<BottomMenu>
-					<SocialButtons colorPrimary />
-				</BottomMenu>
-			</NavigationListWrapp>
-		</NavigationWrapp>
-	);
+  return (
+    <NavigationWrapp>
+      <NavigationListWrapp>
+        <TopMenu>
+          <WrappLogo onClick={changeMenu}>
+            <WrappLogoLink href={'#header'}>
+              <Logo src={logo} alt="logo" />
+            </WrappLogoLink>
+          </WrappLogo>
+          <WrapIcon>
+            <ToggleMenuButton onClick={changeMenu}>
+              {iconFaXMark}
+            </ToggleMenuButton>
+          </WrapIcon>
+        </TopMenu>
+        <NavigationNav>
+          <NavigationUl>{menuItem}</NavigationUl>
+        </NavigationNav>
+        <BottomMenu>
+          <SocialButtons colorPrimary />
+        </BottomMenu>
+      </NavigationListWrapp>
+    </NavigationWrapp>
+  );
 };
 
 export default NavigationMainListSmall;

@@ -2,19 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const NavigationMainListBig = ({ menuItems }) => {
-	const menuItem = menuItems.map((item) => (
-		<NavigationLi key={item.id}>
-			<NavigationLink href={`#${item.id}`}>{item.name}</NavigationLink>
-		</NavigationLi>
-	));
+  const menuItem = menuItems.map((item) => (
+    <NavigationLi key={item.id}>
+      <NavigationLink href={`#${item.id}`}>{item.name}</NavigationLink>
+    </NavigationLi>
+  ));
 
-	return (
-		<NavigationWrapp>
-			<nav>
-				<NavigationUl>{menuItem}</NavigationUl>
-			</nav>
-		</NavigationWrapp>
-	);
+  return (
+    <NavigationWrapp>
+      <nav>
+        <NavigationUl>{menuItem}</NavigationUl>
+      </nav>
+    </NavigationWrapp>
+  );
 };
 
 export default NavigationMainListBig;

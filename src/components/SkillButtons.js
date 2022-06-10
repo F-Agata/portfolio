@@ -8,31 +8,31 @@ const iconReact = <FontAwesomeIcon icon={faReact} />;
 const iconSass = <FontAwesomeIcon icon={faSass} />;
 
 const skillIconsArray = [
-	{
-		name: iconReact,
-		id: 'iconReact',
-		path: '#',
-	},
-	{
-		name: iconSass,
-		id: 'iconSass',
-		path: '#',
-	},
+  {
+    name: iconReact,
+    id: 'iconReact',
+    path: '#',
+  },
+  {
+    name: iconSass,
+    id: 'iconSass',
+    path: '#',
+  },
 ];
 
 const SkillButtons = () => {
-	const skillIcon = skillIconsArray.map((item) => (
-		<WrappIcon key={item.id} href={item.path}>
-			{item.name}
-		</WrappIcon>
-	));
+  const skillIcon = skillIconsArray.map((item) => (
+    <WrappIcon key={item.id} href={item.path}>
+      {item.name}
+    </WrappIcon>
+  ));
 
-	return (
-		<WrappSkillButtons>
-			<Invitation>Mój stack</Invitation>
-			<WrappIcons>{skillIcon}</WrappIcons>
-		</WrappSkillButtons>
-	);
+  return (
+    <WrappSkillButtons>
+      <Invitation>Mój stack</Invitation>
+      <WrappIcons>{skillIcon}</WrappIcons>
+    </WrappSkillButtons>
+  );
 };
 
 export default SkillButtons;

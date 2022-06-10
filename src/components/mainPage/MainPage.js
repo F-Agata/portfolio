@@ -8,38 +8,38 @@ import MPSkills from './MPSkills';
 import DivToNavigation from '../DivToNavigation';
 
 const mpNavigationArray = [
-	{
-		name: 'doświadczenie zawodowe',
-		id: 'MPNavigation2',
-	},
-	{
-		name: 'edukacja',
-		id: 'MPNavigation1',
-	},
-	{
-		name: 'umiejętności',
-		id: 'MPNavigation3',
-	},
+  {
+    name: 'doświadczenie zawodowe',
+    id: 'MPNavigation2',
+  },
+  {
+    name: 'edukacja',
+    id: 'MPNavigation1',
+  },
+  {
+    name: 'umiejętności',
+    id: 'MPNavigation3',
+  },
 ];
 
 const MainPage = () => {
-	const [activeTab, setActiveTab] = useState('edukacja');
+  const [activeTab, setActiveTab] = useState('doświadczenie zawodowe');
 
-	return (
-		<>
-			<DivToNavigation id={'mainPage'} />
-			<WrappMainPage>
-				<MPNavigation
-					setActiveTab={setActiveTab}
-					mpNavigationArray={mpNavigationArray}
-					activeTab={activeTab}
-				/>
-				{activeTab === 'edukacja' && <MPEducation />}
-				{activeTab === 'doświadczenie zawodowe' && <MPExperience />}
-				{activeTab === 'umiejętności' && <MPSkills />}
-			</WrappMainPage>
-		</>
-	);
+  return (
+    <>
+      <DivToNavigation id={'mainPage'} />
+      <WrappMainPage>
+        <MPNavigation
+          setActiveTab={setActiveTab}
+          mpNavigationArray={mpNavigationArray}
+          activeTab={activeTab}
+        />
+        {activeTab === 'edukacja' && <MPEducation />}
+        {activeTab === 'doświadczenie zawodowe' && <MPExperience />}
+        {activeTab === 'umiejętności' && <MPSkills />}
+      </WrappMainPage>
+    </>
+  );
 };
 
 export default MainPage;

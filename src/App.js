@@ -11,19 +11,19 @@ import Navigation from './components/navigation/Navigation';
 import GoToTopOfPage from './components/GoToTopOfPage';
 
 function App() {
-	return (
-		<ThemeProvider theme={theme}>
-			<GlobalStyle />
-			<AppWrapp>
-				<Navigation />
-				<Header />
-				<MainPage />
-				<MainPortfolio />
-				<Footer />
-				<GoToTopOfPage />
-			</AppWrapp>
-		</ThemeProvider>
-	);
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <AppWrapp>
+        <Navigation />
+        <Header />
+        <MainPage />
+        <MainPortfolio />
+        <Footer />
+        <GoToTopOfPage />
+      </AppWrapp>
+    </ThemeProvider>
+  );
 }
 
 export default App;

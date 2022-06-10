@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const WrappLineDecoration = () => {
-	return (
-		<LineDecoration>
-			<Line />
-		</LineDecoration>
-	);
+  return (
+    <LineDecoration>
+      <Line />
+    </LineDecoration>
+  );
 };
 
 export default WrappLineDecoration;

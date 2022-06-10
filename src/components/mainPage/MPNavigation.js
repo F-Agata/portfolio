@@ -2,21 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MPNavigation = ({ mpNavigationArray, setActiveTab, activeTab }) => {
-	const mpNavigationItem = mpNavigationArray.map(({ id, name }) => (
-		<NavigationLi
-			key={id}
-			onClick={() => setActiveTab(name)}
-			isActive={activeTab === name}
-		>
-			<NavigationText>{name}</NavigationText>
-		</NavigationLi>
-	));
+  const mpNavigationItem = mpNavigationArray.map(({ id, name }) => (
+    <NavigationLi
+      key={id}
+      onClick={() => setActiveTab(name)}
+      isActive={activeTab === name}
+    >
+      <NavigationText>{name}</NavigationText>
+    </NavigationLi>
+  ));
 
-	return (
-		<WrappMPNavigation>
-			<NavigationUl>{mpNavigationItem}</NavigationUl>
-		</WrappMPNavigation>
-	);
+  return (
+    <WrappMPNavigation>
+      <NavigationUl>{mpNavigationItem}</NavigationUl>
+    </WrappMPNavigation>
+  );
 };
 
 export default MPNavigation;
@@ -55,13 +55,13 @@ const NavigationLi = styled.div`
   width: 100%;
   border-radius: 10px;
   background: ${(props) =>
-		props.isActive ? props.theme.gradients.gradientBox : 'transparent'};
+    props.isActive ? props.theme.gradients.gradientBox : 'transparent'};
   box-shadow: ${(props) =>
-		props.isActive ? props.theme.shadows.shadowWhite : 'none'};
+    props.isActive ? props.theme.shadows.shadowWhite : 'none'};
   color: ${(props) =>
-		props.isActive
-			? props.theme.colors.colorPrimary
-			: props.theme.colors.colorText};
+    props.isActive
+      ? props.theme.colors.colorPrimary
+      : props.theme.colors.colorText};
   //border: rebeccapurple 2px solid;
   :hover {
     box-shadow: ${(props) => props.theme.shadows.shadowWhite};

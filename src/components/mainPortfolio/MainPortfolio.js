@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import TitleOfSection from '../../styles/TitleOfSection';
@@ -9,100 +9,99 @@ import quiz from '../../pictures/quiz.png';
 import DivToNavigation from '../DivToNavigation';
 
 const portfolioArray = [
-	{
-		name: 'memory',
-		id: 'memory',
-		photo: memory,
-		skills: 'html, css, jsx',
-	},
-	{
-		name: 'quiz',
-		id: 'quiz',
-		photo: quiz,
-		skills: 'html, css, jsx',
-	},
-	{
-		name: 'form',
-		id: 'form',
-		photo: form,
-		skills: 'html, css, jsx',
-	},
-	{
-		name: 'memory1',
-		id: 'memory1',
-		photo: memory,
-		skills: 'html, css, jsx',
-	},
-	{
-		name: 'quiz1',
-		id: 'quiz1',
-		photo: quiz,
-		skills: 'html, css, jsx',
-	},
-	{
-		name: 'form1',
-		id: 'form1',
-		photo: form,
-		skills: 'html, css, jsx',
-	},
+  {
+    name: 'memory',
+    id: 'memory',
+    photo: memory,
+    skills: 'html, css, jsx',
+  },
+  {
+    name: 'quiz',
+    id: 'quiz',
+    photo: quiz,
+    skills: 'html, css, jsx',
+  },
+  {
+    name: 'form',
+    id: 'form',
+    photo: form,
+    skills: 'html, css, jsx',
+  },
+  {
+    name: 'memory1',
+    id: 'memory1',
+    photo: memory,
+    skills: 'html, css, jsx',
+  },
+  {
+    name: 'quiz1',
+    id: 'quiz1',
+    photo: quiz,
+    skills: 'html, css, jsx',
+  },
+  {
+    name: 'form1',
+    id: 'form1',
+    photo: form,
+    skills: 'html, css, jsx',
+  },
 ];
 
 const MainPortfolio = () => {
-	const [isActiveProjects, setIsActiveProject] = useState({
-		isActiveProject1: false,
-		isActiveProject2: false,
-		isActiveProject3: false,
-	});
+  const [isActiveProjects, setIsActiveProject] = useState({
+    isActiveProject1: false,
+    isActiveProject2: false,
+    isActiveProject3: false,
+  });
 
-	const onMouseEnterChangeActive = (e, isActiveProject) => {
-		setIsActiveProject({
-			...isActiveProjects,
-			[isActiveProject]: true,
-		});
-	};
+  const onMouseEnterChangeActive = (e, isActiveProject) => {
+    setIsActiveProject({
+      ...isActiveProjects,
+      [isActiveProject]: true,
+    });
+  };
 
-	const onMouseLeaveChangeActive = (e, isActiveProject) => {
-		setIsActiveProject({
-			...isActiveProjects,
-			[isActiveProject]: false,
-		});
-	};
+  const onMouseLeaveChangeActive = (e, isActiveProject) => {
+    setIsActiveProject({
+      ...isActiveProjects,
+      [isActiveProject]: false,
+    });
+  };
 
-	const oneProject = portfolioArray.map((item, index) => {
-		const isActive = isActiveProjects[`isActiveProject${index + 1}`];
+  const oneProject = portfolioArray.map((item, index) => {
+    const isActive = isActiveProjects[`isActiveProject${index + 1}`];
 
-		return (
-			<WrappOneProject
-				key={item.id}
-				onMouseEnter={(e) =>
-					onMouseEnterChangeActive(e, `isActiveProject${index + 1}`)
-				}
-				onMouseLeave={(e) =>
-					onMouseLeaveChangeActive(e, `isActiveProject${index + 1}`)
-				}
-				dataIsActiv={isActive}
-			>
-				<WrappImgPF>
-					<ImgPF src={item.photo} alt={item.name} dataIsActiv={isActive} />
-				</WrappImgPF>
-				<WrappInfo>
-					<Skills>{item.skills}</Skills>
-					<Title dataIsActiv={isActive}>{item.name}</Title>
-				</WrappInfo>
-			</WrappOneProject>
-		);
-	});
-	// useEffect(()=>{console.log('dataIsActive', dataIsActive)},[dataIsActive])
+    return (
+      <WrappOneProject
+        key={item.id}
+        onMouseEnter={(e) =>
+          onMouseEnterChangeActive(e, `isActiveProject${index + 1}`)
+        }
+        onMouseLeave={(e) =>
+          onMouseLeaveChangeActive(e, `isActiveProject${index + 1}`)
+        }
+        dataIsActiv={isActive}
+      >
+        <WrappImgPF>
+          <ImgPF src={item.photo} alt={item.name} dataIsActiv={isActive} />
+        </WrappImgPF>
+        <WrappInfo>
+          <Skills>{item.skills}</Skills>
+          <Title dataIsActiv={isActive}>{item.name}</Title>
+        </WrappInfo>
+      </WrappOneProject>
+    );
+  });
 
-	return (
-		<>
-			<DivToNavigation id={'mainPortfolio'} />
-			<WrappMainPortfolio>
-				<TitleOfSection>Portfolio</TitleOfSection>
-				{oneProject}
-			</WrappMainPortfolio>
-		</>
-	);
+  return (
+    <>
+      <DivToNavigation id={'mainPortfolio'} />
+      <WrappMainPortfolio>
+        <TitleOfSection>Portfolio</TitleOfSection>
+        {oneProject}
+      </WrappMainPortfolio>
+    </>
+  );
 };
 
 export default MainPortfolio;
@@ -208,9 +207,9 @@ const Title = styled.p`
   text-decoration: none;
   text-align: center;
   color: ${(props) =>
-		props.dataIsActiv
-			? props.theme.colors.colorPrimary
-			: props.theme.colors.colorText};
+    props.dataIsActiv
+      ? props.theme.colors.colorPrimary
+      : props.theme.colors.colorText};
   font-family: ${(props) => props.theme.fonts.fontSecondary};
   font-weight: 700;
   letter-spacing: 2px;
