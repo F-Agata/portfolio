@@ -32,13 +32,24 @@ const HeaderPartText = () => {
           />
         </TypeWrapper>
       </Welcome>
-      <InformationAboutMe>
-        Tutaj napiszę kilka słów o mnie. W tym momencie powstaje struktura
-        strony. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-        autem ducimus earum eligendi facilis incidunt laudantium magni minus
-        nostrum, omnis qui, suscipit, ullam veniam. Aut dolore eligendi eos ex
-        necessitatibus!
-      </InformationAboutMe>
+      <InformationAboutMeTop>
+        <p>
+          Moim pierwszym wyborem jest <b>React</b>
+        </p>
+        <p>
+          Cały czas rozwijam swoją wiedzę oraz umiejętności, w codziennej pracy
+          z tą biblioteką.
+        </p>
+      </InformationAboutMeTop>
+      <InformationAboutMeBottom>
+        <p>Aktualnie projekty piszę w stacku:</p>
+        <p>
+          - <b>react z next.js</b>
+        </p>
+        <p>
+          - <b>styled components z styled-system</b>
+        </p>
+      </InformationAboutMeBottom>
       <WrappSocialAndSkillButtons>
         <SocialButtons />
         <SkillButtons />
@@ -68,16 +79,16 @@ const Welcome = styled.div`
   letter-spacing: 1px;
 `;
 
-const InformationAboutMe = styled.p`
+const InformationAboutMeTop = styled.div`
   width: 100%;
-  margin: 30px 0;
-  @media (min-width: 992px) {
-    //border: #61dafb 2px solid;
-  }
+  margin: 30px 0 0 0;
+`;
+
+const InformationAboutMeBottom = styled(InformationAboutMeTop)`
+  margin: 10px 0 30px 0;
 `;
 
 const WrappSocialAndSkillButtons = styled.div`
-  //border: #61dafb 2px solid;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -85,7 +96,6 @@ const WrappSocialAndSkillButtons = styled.div`
   justify-content: space-between;
   margin-top: 30px;
   @media (min-width: 550px) {
-    //border: #61dafb 2px solid;
     flex-direction: row;
   }
 `;
